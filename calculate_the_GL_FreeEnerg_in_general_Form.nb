@@ -1,0 +1,2717 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     95469,       2708]
+NotebookOptionsPosition[     93236,       2641]
+NotebookOutlinePosition[     93600,       2657]
+CellTagsIndexPosition[     93557,       2654]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "this", " ", "script", " ", "is", " ", "uded", " ", "to", " ", "calculate",
+     " ", "the", " ", "general", " ", "form", "\[IndentingNewLine]", "of", 
+    " ", 
+    RowBox[{"G", "/", "L"}], " ", "free", " ", "energy", " ", "density"}], 
+   " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"Term", " ", "\[Alpha]", " ", "A\[Alpha]i", " ", 
+    SuperscriptBox["A\[Alpha]i", "*"]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Clear", "[", 
+    RowBox[{
+    "A\[Alpha]i", ",", "A\[Alpha]iHC", ",", "fGL", ",", "\[Alpha]", ",", 
+     "\[Beta]1", ",", "\[Beta]2", ",", "\[Beta]3", ",", "\[Beta]4", ",", 
+     "aRxx", ",", "aRxy", ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", "aRyz", 
+     ",", "aRzx", ",", "aRzy", ",", "aRzz", ",", "aIxx", ",", "aIxy", ",", 
+     "aIxz", ",", "aIyx", ",", "aIyy", ",", "aIyz", ",", "aIzx", ",", "aIzy", 
+     ",", "aIzz"}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"A\[Alpha]i", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"aRxx", " ", "+", " ", 
+         RowBox[{"I", " ", "aIxx"}]}], ",", 
+        RowBox[{"aRxy", " ", "+", " ", 
+         RowBox[{"I", " ", "aIxy"}]}], ",", " ", 
+        RowBox[{"aRxz", " ", "+", 
+         RowBox[{"I", " ", "aIxz"}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"aRyx", " ", "+", " ", 
+         RowBox[{"I", " ", "aIyx"}]}], ",", 
+        RowBox[{"aRyy", " ", "+", " ", 
+         RowBox[{"I", " ", "aIyy"}]}], ",", " ", 
+        RowBox[{"aRyz", " ", "+", 
+         RowBox[{"I", " ", "aIyz"}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"aRzx", " ", "+", " ", 
+         RowBox[{"I", " ", "aIzx"}]}], ",", 
+        RowBox[{"aRzy", " ", "+", " ", 
+         RowBox[{"I", " ", "aIzy"}]}], ",", " ", 
+        RowBox[{"aRzz", " ", "+", 
+         RowBox[{"I", " ", "aIzz"}]}]}], "}"}]}], "}"}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+   RowBox[{"A\[Alpha]iHC", "=", 
+    RowBox[{"Simplify", "[", 
+     RowBox[{
+      RowBox[{"ConjugateTranspose", "[", "A\[Alpha]i", "]"}], ",", 
+      RowBox[{"Assumptions", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+          "aRxx", ",", "aRxy", ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", 
+           "aRyz", ",", "aRzx", ",", "aRzy", ",", "aRzz", ",", "aIxx", ",", 
+           "aIxy", ",", "aIxz", ",", "aIyx", ",", "aIyy", ",", "aIyz", ",", 
+           "aIzx", ",", "aIzy", ",", "aIzz"}], "}"}], "\[Element]", "Reals"}],
+         "}"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+   RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{"Style", "[", 
+     RowBox[{
+     "\"\<Term \[Alpha] A\[Alpha]i \!\(\*SuperscriptBox[\(A\[Alpha]i\), \
+\(*\)]\) is given as\>\"", ",", "Red", ",", "16"}], "]"}], "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{
+     RowBox[{"\[Alpha]", " ", 
+      RowBox[{"Tr", "[", 
+       RowBox[{"A\[Alpha]i", ".", "A\[Alpha]iHC"}], "]"}]}], ",", 
+     RowBox[{"Assumptions", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+         "aRxx", ",", "aRxy", ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", 
+          "aRyz", ",", "aRzx", ",", "aRzy", ",", "aRzz", ",", "aIxx", ",", 
+          "aIxy", ",", "aIxz", ",", "aIyx", ",", "aIyy", ",", "aIyz", ",", 
+          "aIzx", ",", "aIzy", ",", "aIzz"}], "}"}], "\[Element]", "Reals"}], 
+       "}"}]}]}], "]"}], "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.83964842645245*^9, 3.83964850158746*^9}, {
+  3.839648540351074*^9, 3.839648607185876*^9}, {3.839648674850597*^9, 
+  3.839648743479014*^9}, {3.839648873959774*^9, 3.839648965466363*^9}, {
+  3.839649112719429*^9, 3.8396495071183367`*^9}, {3.8396496132226887`*^9, 
+  3.839649626393063*^9}, {3.839649727553206*^9, 3.839649727835594*^9}, {
+  3.839668954122313*^9, 3.83966895487219*^9}, {3.839674748746813*^9, 
+  3.839674751264348*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"\[ImaginaryI]", " ", "aIxx"}], "+", "aRxx"}], ",", 
+     RowBox[{
+      RowBox[{"\[ImaginaryI]", " ", "aIxy"}], "+", "aRxy"}], ",", 
+     RowBox[{
+      RowBox[{"\[ImaginaryI]", " ", "aIxz"}], "+", "aRxz"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"\[ImaginaryI]", " ", "aIyx"}], "+", "aRyx"}], ",", 
+     RowBox[{
+      RowBox[{"\[ImaginaryI]", " ", "aIyy"}], "+", "aRyy"}], ",", 
+     RowBox[{
+      RowBox[{"\[ImaginaryI]", " ", "aIyz"}], "+", "aRyz"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"\[ImaginaryI]", " ", "aIzx"}], "+", "aRzx"}], ",", 
+     RowBox[{
+      RowBox[{"\[ImaginaryI]", " ", "aIzy"}], "+", "aRzy"}], ",", 
+     RowBox[{
+      RowBox[{"\[ImaginaryI]", " ", "aIzz"}], "+", "aRzz"}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.83964896662685*^9, 3.839649140239126*^9, {3.839649285121385*^9, 
+   3.8396492927788477`*^9}, 3.83964936781295*^9, 3.8396493981846447`*^9, 
+   3.839649428998952*^9, 3.839649628183544*^9, 3.8396497377102203`*^9, 
+   3.839668965155222*^9, 3.839674752451976*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxx"}], "+", "aRxx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxy"}], "+", "aRxy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxz"}], "+", "aRxz"}]},
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyx"}], "+", "aRyx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyy"}], "+", "aRyy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyz"}], "+", "aRyz"}]},
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzx"}], "+", "aRzx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzy"}], "+", "aRzy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzz"}], "+", "aRzz"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.83964896662685*^9, 3.839649140239126*^9, {3.839649285121385*^9, 
+   3.8396492927788477`*^9}, 3.83964936781295*^9, 3.8396493981846447`*^9, 
+   3.839649428998952*^9, 3.839649628183544*^9, 3.8396497377102203`*^9, 
+   3.839668965155222*^9, 3.839674752456276*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxx"}], "+", "aRxx"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyx"}], "+", "aRyx"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzx"}], "+", "aRzx"}]}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxy"}], "+", "aRxy"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyy"}], "+", "aRyy"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzy"}], "+", "aRzy"}]}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxz"}], "+", "aRxz"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyz"}], "+", "aRyz"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzz"}], "+", "aRzz"}]}], 
+    "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.83964896662685*^9, 3.839649140239126*^9, {3.839649285121385*^9, 
+   3.8396492927788477`*^9}, 3.83964936781295*^9, 3.8396493981846447`*^9, 
+   3.839649428998952*^9, 3.839649628183544*^9, 3.8396497377102203`*^9, 
+   3.839668965155222*^9, 3.8396747524589376`*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxx"}], "+", "aRxx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyx"}], "+", "aRyx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzx"}], "+", "aRzx"}]},
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxy"}], "+", "aRxy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyy"}], "+", "aRyy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzy"}], "+", "aRzy"}]},
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxz"}], "+", "aRxz"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyz"}], "+", "aRyz"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzz"}], "+", "aRzz"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.83964896662685*^9, 3.839649140239126*^9, {3.839649285121385*^9, 
+   3.8396492927788477`*^9}, 3.83964936781295*^9, 3.8396493981846447`*^9, 
+   3.839649428998952*^9, 3.839649628183544*^9, 3.8396497377102203`*^9, 
+   3.839668965155222*^9, 3.839674752461389*^9}],
+
+Cell[BoxData[
+ StyleBox["\<\"Term \[Alpha] A\[Alpha]i \\!\\(\\*SuperscriptBox[\\(A\[Alpha]i\
+\\), \\(*\\)]\\) is given as\"\>",
+  StripOnInput->False,
+  LineColor->RGBColor[1, 0, 0],
+  FrontFaceColor->RGBColor[1, 0, 0],
+  BackFaceColor->RGBColor[1, 0, 0],
+  GraphicsColor->RGBColor[1, 0, 0],
+  FontSize->16,
+  FontColor->RGBColor[1, 0, 0]]], "Print",
+ CellChangeTimes->{3.839649737719326*^9, 3.839668965166759*^9, 
+  3.8396747524633512`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    SuperscriptBox["aIxx", "2"], "+", 
+    SuperscriptBox["aIxy", "2"], "+", 
+    SuperscriptBox["aIxz", "2"], "+", 
+    SuperscriptBox["aIyx", "2"], "+", 
+    SuperscriptBox["aIyy", "2"], "+", 
+    SuperscriptBox["aIyz", "2"], "+", 
+    SuperscriptBox["aIzx", "2"], "+", 
+    SuperscriptBox["aIzy", "2"], "+", 
+    SuperscriptBox["aIzz", "2"], "+", 
+    SuperscriptBox["aRxx", "2"], "+", 
+    SuperscriptBox["aRxy", "2"], "+", 
+    SuperscriptBox["aRxz", "2"], "+", 
+    SuperscriptBox["aRyx", "2"], "+", 
+    SuperscriptBox["aRyy", "2"], "+", 
+    SuperscriptBox["aRyz", "2"], "+", 
+    SuperscriptBox["aRzx", "2"], "+", 
+    SuperscriptBox["aRzy", "2"], "+", 
+    SuperscriptBox["aRzz", "2"]}], ")"}], " ", "\[Alpha]"}]], "Output",
+ CellChangeTimes->{
+  3.83964896662685*^9, 3.839649140239126*^9, {3.839649285121385*^9, 
+   3.8396492927788477`*^9}, 3.83964936781295*^9, 3.8396493981846447`*^9, 
+   3.839649428998952*^9, 3.839649628183544*^9, 3.8396497377102203`*^9, 
+   3.839668965155222*^9, 3.839674752465178*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", 
+  RowBox[{
+  "A\[Alpha]i", ",", "A\[Alpha]iHC", ",", "A\[Alpha]iT", ",", "A\[Alpha]iC", 
+   ",", "A\[Alpha]iCT", ",", "fGL", ",", "\[Alpha]", ",", "\[Beta]1", ",", 
+   "\[Beta]2", ",", "\[Beta]3", ",", "\[Beta]4", ",", "aRxx", ",", "aRxy", 
+   ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", "aRyz", ",", "aRzx", ",", 
+   "aRzy", ",", "aRzz", ",", "aIxx", ",", "aIxy", ",", "aIxz", ",", "aIyx", 
+   ",", "aIyy", ",", "aIyz", ",", "aIzx", ",", "aIzy", ",", "aIzz"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]i", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"aRxx", " ", "+", " ", 
+        RowBox[{"I", " ", "aIxx"}]}], ",", 
+       RowBox[{"aRxy", " ", "+", " ", 
+        RowBox[{"I", " ", "aIxy"}]}], ",", " ", 
+       RowBox[{"aRxz", " ", "+", 
+        RowBox[{"I", " ", "aIxz"}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"aRyx", " ", "+", " ", 
+        RowBox[{"I", " ", "aIyx"}]}], ",", 
+       RowBox[{"aRyy", " ", "+", " ", 
+        RowBox[{"I", " ", "aIyy"}]}], ",", " ", 
+       RowBox[{"aRyz", " ", "+", 
+        RowBox[{"I", " ", "aIyz"}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"aRzx", " ", "+", " ", 
+        RowBox[{"I", " ", "aIzx"}]}], ",", 
+       RowBox[{"aRzy", " ", "+", " ", 
+        RowBox[{"I", " ", "aIzy"}]}], ",", " ", 
+       RowBox[{"aRzz", " ", "+", 
+        RowBox[{"I", " ", "aIzz"}]}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]iT", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{
+     RowBox[{"Transpose", "[", "A\[Alpha]i", "]"}], ",", 
+     RowBox[{"Assumptions", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+         "aRxx", ",", "aRxy", ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", 
+          "aRyz", ",", "aRzx", ",", "aRzy", ",", "aRzz", ",", "aIxx", ",", 
+          "aIxy", ",", "aIxz", ",", "aIyx", ",", "aIyy", ",", "aIyz", ",", 
+          "aIzx", ",", "aIzy", ",", "aIzz"}], "}"}], "\[Element]", "Reals"}], 
+       "}"}]}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]iHC", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{
+     RowBox[{"ConjugateTranspose", "[", "A\[Alpha]i", "]"}], ",", 
+     RowBox[{"Assumptions", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+         "aRxx", ",", "aRxy", ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", 
+          "aRyz", ",", "aRzx", ",", "aRzy", ",", "aRzz", ",", "aIxx", ",", 
+          "aIxy", ",", "aIxz", ",", "aIyx", ",", "aIyy", ",", "aIyz", ",", 
+          "aIzx", ",", "aIzy", ",", "aIzz"}], "}"}], "\[Element]", "Reals"}], 
+       "}"}]}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]iC", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{
+     RowBox[{"Conjugate", "[", "A\[Alpha]i", "]"}], ",", 
+     RowBox[{"Assumptions", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+         "aRxx", ",", "aRxy", ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", 
+          "aRyz", ",", "aRzx", ",", "aRzy", ",", "aRzz", ",", "aIxx", ",", 
+          "aIxy", ",", "aIxz", ",", "aIyx", ",", "aIyy", ",", "aIyz", ",", 
+          "aIzx", ",", "aIzy", ",", "aIzz"}], "}"}], "\[Element]", "Reals"}], 
+       "}"}]}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"Style", "[", 
+   RowBox[{
+   "\"\<Term \[Beta]1 \!\(\*SuperscriptBox[\(A\[Alpha]i\), \(*\)]\) \
+\!\(\*SuperscriptBox[\(A\[Alpha]i\), \(*\)]\) A\[Beta]j A\[Beta]j is \
+give\>\"", ",", "16", ",", "Red"}], "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{
+   RowBox[{"\[Beta]1", " ", 
+    RowBox[{"Tr", "[", 
+     RowBox[{"A\[Alpha]iC", ".", "A\[Alpha]iHC"}], "]"}], 
+    RowBox[{"Tr", "[", 
+     RowBox[{"A\[Alpha]i", ".", "A\[Alpha]iT"}], "]"}]}], ",", 
+   RowBox[{"Assumptions", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "aRxx", ",", "aRxy", ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", 
+        "aRyz", ",", "aRzx", ",", "aRzy", ",", "aRzz", ",", "aIxx", ",", 
+        "aIxy", ",", "aIxz", ",", "aIyx", ",", "aIyy", ",", "aIyz", ",", 
+        "aIzx", ",", "aIzy", ",", "aIzz"}], "}"}], "\[Element]", "Reals"}], 
+     "}"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8396712726216707`*^9, 3.8396713646761637`*^9}, {
+   3.839671399128604*^9, 3.83967143260742*^9}, {3.8396715417389717`*^9, 
+   3.83967158204218*^9}, {3.839672251934103*^9, 3.839672260750154*^9}, {
+   3.839672297638672*^9, 3.839672299901857*^9}, {3.839672358770409*^9, 
+   3.839672361393239*^9}, {3.8396724693685503`*^9, 3.8396724744154577`*^9}, {
+   3.839673488484662*^9, 3.839673502638023*^9}, {3.839674426676323*^9, 
+   3.839674432372677*^9}, 3.839674548889583*^9, {3.8396747600863647`*^9, 
+   3.839674798400133*^9}, {3.839674834810073*^9, 3.83967486185474*^9}, {
+   3.839674891898872*^9, 3.8396749366936407`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxx"}], "+", "aRxx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxy"}], "+", "aRxy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxz"}], "+", "aRxz"}]},
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyx"}], "+", "aRyx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyy"}], "+", "aRyy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyz"}], "+", "aRyz"}]},
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzx"}], "+", "aRzx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzy"}], "+", "aRzy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzz"}], "+", "aRzz"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.839671404063339*^9, 3.839671441638434*^9}, 
+   3.8396735063261766`*^9, 3.839674435843357*^9, 3.839674550517346*^9, 
+   3.839674869911923*^9, {3.839674916899529*^9, 3.839674937930747*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxx"}], "+", "aRxx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyx"}], "+", "aRyx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzx"}], "+", "aRzx"}]},
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxy"}], "+", "aRxy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyy"}], "+", "aRyy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzy"}], "+", "aRzy"}]},
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxz"}], "+", "aRxz"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyz"}], "+", "aRyz"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzz"}], "+", "aRzz"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.839671404063339*^9, 3.839671441638434*^9}, 
+   3.8396735063261766`*^9, 3.839674435843357*^9, 3.839674550517346*^9, 
+   3.839674869911923*^9, {3.839674916899529*^9, 3.839674937935309*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxx"}], "+", "aRxx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyx"}], "+", "aRyx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzx"}], "+", "aRzx"}]},
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxy"}], "+", "aRxy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyy"}], "+", "aRyy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzy"}], "+", "aRzy"}]},
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxz"}], "+", "aRxz"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyz"}], "+", "aRyz"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzz"}], "+", "aRzz"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.839671404063339*^9, 3.839671441638434*^9}, 
+   3.8396735063261766`*^9, 3.839674435843357*^9, 3.839674550517346*^9, 
+   3.839674869911923*^9, {3.839674916899529*^9, 3.8396749379381866`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxx"}], "+", "aRxx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxy"}], "+", "aRxy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxz"}], "+", "aRxz"}]},
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyx"}], "+", "aRyx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyy"}], "+", "aRyy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyz"}], "+", "aRyz"}]},
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzx"}], "+", "aRzx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzy"}], "+", "aRzy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzz"}], "+", "aRzz"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.839671404063339*^9, 3.839671441638434*^9}, 
+   3.8396735063261766`*^9, 3.839674435843357*^9, 3.839674550517346*^9, 
+   3.839674869911923*^9, {3.839674916899529*^9, 3.8396749379410267`*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"Term \[Beta]1 \\!\\(\\*SuperscriptBox[\\(A\[Alpha]i\\), \
+\\(*\\)]\\) \\!\\(\\*SuperscriptBox[\\(A\[Alpha]i\\), \\(*\\)]\\) A\[Beta]j A\
+\[Beta]j is give\"\>",
+  StripOnInput->False,
+  LineColor->RGBColor[1, 0, 0],
+  FrontFaceColor->RGBColor[1, 0, 0],
+  BackFaceColor->RGBColor[1, 0, 0],
+  GraphicsColor->RGBColor[1, 0, 0],
+  FontSize->16,
+  FontColor->RGBColor[1, 0, 0]]], "Print",
+ CellChangeTimes->{{3.839671413224779*^9, 3.839671441649446*^9}, 
+   3.8396735063423367`*^9, 3.839674435861937*^9, 3.839674550535811*^9, 
+   3.8396748699250937`*^9, {3.839674916919935*^9, 3.839674937943347*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxx"}], "+", "aRxx"}], ")"}], 
+     "2"], "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxy"}], "+", "aRxy"}], ")"}], 
+     "2"], "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxz"}], "+", "aRxz"}], ")"}], 
+     "2"], "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyx"}], "+", "aRyx"}], ")"}], 
+     "2"], "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyy"}], "+", "aRyy"}], ")"}], 
+     "2"], "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyz"}], "+", "aRyz"}], ")"}], 
+     "2"], "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzx"}], "+", "aRzx"}], ")"}], 
+     "2"], "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzy"}], "+", "aRzy"}], ")"}], 
+     "2"], "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzz"}], "+", "aRzz"}], ")"}], 
+     "2"]}], ")"}], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxx"}], "+", "aRxx"}], ")"}], "2"], 
+    "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxy"}], "+", "aRxy"}], ")"}], "2"], 
+    "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxz"}], "+", "aRxz"}], ")"}], "2"], 
+    "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyx"}], "+", "aRyx"}], ")"}], "2"], 
+    "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyy"}], "+", "aRyy"}], ")"}], "2"], 
+    "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyz"}], "+", "aRyz"}], ")"}], "2"], 
+    "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzx"}], "+", "aRzx"}], ")"}], "2"], 
+    "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzy"}], "+", "aRzy"}], ")"}], "2"], 
+    "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzz"}], "+", "aRzz"}], ")"}], "2"]}], 
+   ")"}], " ", "\[Beta]1"}]], "Output",
+ CellChangeTimes->{{3.839671404063339*^9, 3.839671441638434*^9}, 
+   3.8396735063261766`*^9, 3.839674435843357*^9, 3.839674550517346*^9, 
+   3.839674869911923*^9, {3.839674916899529*^9, 3.839674937945744*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", 
+  RowBox[{
+  "A\[Alpha]i", ",", "A\[Alpha]iHC", ",", "A\[Alpha]iT", ",", "A\[Alpha]iC", 
+   ",", "A\[Alpha]iCT", ",", "fGL", ",", "\[Alpha]", ",", "\[Beta]1", ",", 
+   "\[Beta]2", ",", "\[Beta]3", ",", "\[Beta]4", ",", "aRxx", ",", "aRxy", 
+   ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", "aRyz", ",", "aRzx", ",", 
+   "aRzy", ",", "aRzz", ",", "aIxx", ",", "aIxy", ",", "aIxz", ",", "aIyx", 
+   ",", "aIyy", ",", "aIyz", ",", "aIzx", ",", "aIzy", ",", "aIzz"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]i", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"aRxx", " ", "+", " ", 
+        RowBox[{"I", " ", "aIxx"}]}], ",", 
+       RowBox[{"aRxy", " ", "+", " ", 
+        RowBox[{"I", " ", "aIxy"}]}], ",", " ", 
+       RowBox[{"aRxz", " ", "+", 
+        RowBox[{"I", " ", "aIxz"}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"aRyx", " ", "+", " ", 
+        RowBox[{"I", " ", "aIyx"}]}], ",", 
+       RowBox[{"aRyy", " ", "+", " ", 
+        RowBox[{"I", " ", "aIyy"}]}], ",", " ", 
+       RowBox[{"aRyz", " ", "+", 
+        RowBox[{"I", " ", "aIyz"}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"aRzx", " ", "+", " ", 
+        RowBox[{"I", " ", "aIzx"}]}], ",", 
+       RowBox[{"aRzy", " ", "+", " ", 
+        RowBox[{"I", " ", "aIzy"}]}], ",", " ", 
+       RowBox[{"aRzz", " ", "+", 
+        RowBox[{"I", " ", "aIzz"}]}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]iT", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{
+     RowBox[{"Transpose", "[", "A\[Alpha]i", "]"}], ",", 
+     RowBox[{"Assumptions", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+         "aRxx", ",", "aRxy", ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", 
+          "aRyz", ",", "aRzx", ",", "aRzy", ",", "aRzz", ",", "aIxx", ",", 
+          "aIxy", ",", "aIxz", ",", "aIyx", ",", "aIyy", ",", "aIyz", ",", 
+          "aIzx", ",", "aIzy", ",", "aIzz"}], "}"}], "\[Element]", "Reals"}], 
+       "}"}]}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]iHC", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{
+     RowBox[{"ConjugateTranspose", "[", "A\[Alpha]i", "]"}], ",", 
+     RowBox[{"Assumptions", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+         "aRxx", ",", "aRxy", ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", 
+          "aRyz", ",", "aRzx", ",", "aRzy", ",", "aRzz", ",", "aIxx", ",", 
+          "aIxy", ",", "aIxz", ",", "aIyx", ",", "aIyy", ",", "aIyz", ",", 
+          "aIzx", ",", "aIzy", ",", "aIzz"}], "}"}], "\[Element]", "Reals"}], 
+       "}"}]}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]iC", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{
+     RowBox[{"Conjugate", "[", "A\[Alpha]i", "]"}], ",", 
+     RowBox[{"Assumptions", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+         "aRxx", ",", "aRxy", ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", 
+          "aRyz", ",", "aRzx", ",", "aRzy", ",", "aRzz", ",", "aIxx", ",", 
+          "aIxy", ",", "aIxz", ",", "aIyx", ",", "aIyy", ",", "aIyz", ",", 
+          "aIzx", ",", "aIzy", ",", "aIzz"}], "}"}], "\[Element]", "Reals"}], 
+       "}"}]}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"Style", "[", 
+   RowBox[{
+   "\"\<Term \[Beta]2 \!\(\*SuperscriptBox[\(A\[Alpha]i\), \(*\)]\) \
+\!\(\*SuperscriptBox[\(A\[Alpha]i\), \(*\)]\) A\[Beta]j A\[Beta]j is \
+give\>\"", ",", "16", ",", "Red"}], "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{
+   RowBox[{"\[Beta]2", " ", 
+    RowBox[{"Tr", "[", 
+     RowBox[{"A\[Alpha]i", ".", "A\[Alpha]iHC"}], "]"}], 
+    RowBox[{"Tr", "[", 
+     RowBox[{"A\[Alpha]i", ".", "A\[Alpha]iHC"}], "]"}]}], ",", 
+   RowBox[{"Assumptions", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "aRxx", ",", "aRxy", ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", 
+        "aRyz", ",", "aRzx", ",", "aRzy", ",", "aRzz", ",", "aIxx", ",", 
+        "aIxy", ",", "aIxz", ",", "aIyx", ",", "aIyy", ",", "aIyz", ",", 
+        "aIzx", ",", "aIzy", ",", "aIzz"}], "}"}], "\[Element]", "Reals"}], 
+     "}"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8396945484273148`*^9, 3.839694548653411*^9}, {
+  3.839700011818592*^9, 3.8397000127200537`*^9}, {3.839700059361211*^9, 
+  3.8397000717743893`*^9}, {3.839701116198752*^9, 3.8397011171431*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxx"}], "+", "aRxx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxy"}], "+", "aRxy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxz"}], "+", "aRxz"}]},
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyx"}], "+", "aRyx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyy"}], "+", "aRyy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyz"}], "+", "aRyz"}]},
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzx"}], "+", "aRzx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzy"}], "+", "aRzy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzz"}], "+", "aRzz"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.8397000818809223`*^9, 3.8397011727588377`*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxx"}], "+", "aRxx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyx"}], "+", "aRyx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzx"}], "+", "aRzx"}]},
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxy"}], "+", "aRxy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyy"}], "+", "aRyy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzy"}], "+", "aRzy"}]},
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxz"}], "+", "aRxz"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyz"}], "+", "aRyz"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzz"}], "+", "aRzz"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.8397000818809223`*^9, 3.839701172762939*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxx"}], "+", "aRxx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyx"}], "+", "aRyx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzx"}], "+", "aRzx"}]},
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxy"}], "+", "aRxy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyy"}], "+", "aRyy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzy"}], "+", "aRzy"}]},
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxz"}], "+", "aRxz"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyz"}], "+", "aRyz"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzz"}], "+", "aRzz"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.8397000818809223`*^9, 3.839701172766035*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxx"}], "+", "aRxx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxy"}], "+", "aRxy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxz"}], "+", "aRxz"}]},
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyx"}], "+", "aRyx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyy"}], "+", "aRyy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyz"}], "+", "aRyz"}]},
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzx"}], "+", "aRzx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzy"}], "+", "aRzy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzz"}], "+", "aRzz"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.8397000818809223`*^9, 3.839701172769079*^9}],
+
+Cell[BoxData[
+ StyleBox["\<\"Term \[Beta]2 \\!\\(\\*SuperscriptBox[\\(A\[Alpha]i\\), \
+\\(*\\)]\\) \\!\\(\\*SuperscriptBox[\\(A\[Alpha]i\\), \\(*\\)]\\) A\[Beta]j A\
+\[Beta]j is give\"\>",
+  StripOnInput->False,
+  LineColor->RGBColor[1, 0, 0],
+  FrontFaceColor->RGBColor[1, 0, 0],
+  BackFaceColor->RGBColor[1, 0, 0],
+  GraphicsColor->RGBColor[1, 0, 0],
+  FontSize->16,
+  FontColor->RGBColor[1, 0, 0]]], "Print",
+ CellChangeTimes->{3.839700081894567*^9, 3.839701172771991*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{
+     SuperscriptBox["aIxx", "2"], "+", 
+     SuperscriptBox["aIxy", "2"], "+", 
+     SuperscriptBox["aIxz", "2"], "+", 
+     SuperscriptBox["aIyx", "2"], "+", 
+     SuperscriptBox["aIyy", "2"], "+", 
+     SuperscriptBox["aIyz", "2"], "+", 
+     SuperscriptBox["aIzx", "2"], "+", 
+     SuperscriptBox["aIzy", "2"], "+", 
+     SuperscriptBox["aIzz", "2"], "+", 
+     SuperscriptBox["aRxx", "2"], "+", 
+     SuperscriptBox["aRxy", "2"], "+", 
+     SuperscriptBox["aRxz", "2"], "+", 
+     SuperscriptBox["aRyx", "2"], "+", 
+     SuperscriptBox["aRyy", "2"], "+", 
+     SuperscriptBox["aRyz", "2"], "+", 
+     SuperscriptBox["aRzx", "2"], "+", 
+     SuperscriptBox["aRzy", "2"], "+", 
+     SuperscriptBox["aRzz", "2"]}], ")"}], "2"], " ", "\[Beta]2"}]], "Output",\
+
+ CellChangeTimes->{3.8397000818809223`*^9, 3.839701173000935*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", 
+  RowBox[{
+  "A\[Alpha]i", ",", "A\[Alpha]iHC", ",", "A\[Alpha]iT", ",", "A\[Alpha]iC", 
+   ",", "A\[Alpha]iCT", ",", "fGL", ",", "\[Alpha]", ",", "\[Beta]1", ",", 
+   "\[Beta]2", ",", "\[Beta]3", ",", "\[Beta]4", ",", "aRxx", ",", "aRxy", 
+   ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", "aRyz", ",", "aRzx", ",", 
+   "aRzy", ",", "aRzz", ",", "aIxx", ",", "aIxy", ",", "aIxz", ",", "aIyx", 
+   ",", "aIyy", ",", "aIyz", ",", "aIzx", ",", "aIzy", ",", "aIzz"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]i", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"aRxx", " ", "+", " ", 
+        RowBox[{"I", " ", "aIxx"}]}], ",", 
+       RowBox[{"aRxy", " ", "+", " ", 
+        RowBox[{"I", " ", "aIxy"}]}], ",", " ", 
+       RowBox[{"aRxz", " ", "+", 
+        RowBox[{"I", " ", "aIxz"}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"aRyx", " ", "+", " ", 
+        RowBox[{"I", " ", "aIyx"}]}], ",", 
+       RowBox[{"aRyy", " ", "+", " ", 
+        RowBox[{"I", " ", "aIyy"}]}], ",", " ", 
+       RowBox[{"aRyz", " ", "+", 
+        RowBox[{"I", " ", "aIyz"}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"aRzx", " ", "+", " ", 
+        RowBox[{"I", " ", "aIzx"}]}], ",", 
+       RowBox[{"aRzy", " ", "+", " ", 
+        RowBox[{"I", " ", "aIzy"}]}], ",", " ", 
+       RowBox[{"aRzz", " ", "+", 
+        RowBox[{"I", " ", "aIzz"}]}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]iT", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{
+     RowBox[{"Transpose", "[", "A\[Alpha]i", "]"}], ",", 
+     RowBox[{"Assumptions", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+         "aRxx", ",", "aRxy", ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", 
+          "aRyz", ",", "aRzx", ",", "aRzy", ",", "aRzz", ",", "aIxx", ",", 
+          "aIxy", ",", "aIxz", ",", "aIyx", ",", "aIyy", ",", "aIyz", ",", 
+          "aIzx", ",", "aIzy", ",", "aIzz"}], "}"}], "\[Element]", "Reals"}], 
+       "}"}]}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]iHC", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{
+     RowBox[{"ConjugateTranspose", "[", "A\[Alpha]i", "]"}], ",", 
+     RowBox[{"Assumptions", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+         "aRxx", ",", "aRxy", ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", 
+          "aRyz", ",", "aRzx", ",", "aRzy", ",", "aRzz", ",", "aIxx", ",", 
+          "aIxy", ",", "aIxz", ",", "aIyx", ",", "aIyy", ",", "aIyz", ",", 
+          "aIzx", ",", "aIzy", ",", "aIzz"}], "}"}], "\[Element]", "Reals"}], 
+       "}"}]}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]iC", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{
+     RowBox[{"Conjugate", "[", "A\[Alpha]i", "]"}], ",", 
+     RowBox[{"Assumptions", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+         "aRxx", ",", "aRxy", ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", 
+          "aRyz", ",", "aRzx", ",", "aRzy", ",", "aRzz", ",", "aIxx", ",", 
+          "aIxy", ",", "aIxz", ",", "aIyx", ",", "aIyy", ",", "aIyz", ",", 
+          "aIzx", ",", "aIzy", ",", "aIzz"}], "}"}], "\[Element]", "Reals"}], 
+       "}"}]}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"Style", "[", 
+   RowBox[{
+   "\"\<Term \[Beta]3 \!\(\*SuperscriptBox[\(A\[Alpha]i\), \(*\)]\) \
+\!\(\*SuperscriptBox[\(A\[Alpha]i\), \(*\)]\) A\[Beta]j A\[Beta]j is \
+give\>\"", ",", "16", ",", "Red"}], "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{
+   RowBox[{"\[Beta]3", " ", 
+    RowBox[{"Tr", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"A\[Alpha]iC", ".", "A\[Alpha]iHC"}], ")"}], ".", 
+      RowBox[{"(", 
+       RowBox[{"A\[Alpha]i", ".", "A\[Alpha]iT"}], ")"}]}], "]"}]}], ",", 
+   RowBox[{"Assumptions", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "aRxx", ",", "aRxy", ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", 
+        "aRyz", ",", "aRzx", ",", "aRzy", ",", "aRzz", ",", "aIxx", ",", 
+        "aIxy", ",", "aIxz", ",", "aIyx", ",", "aIyy", ",", "aIyz", ",", 
+        "aIzx", ",", "aIzy", ",", "aIzz"}], "}"}], "\[Element]", "Reals"}], 
+     "}"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.83970025155469*^9, 3.839700270117646*^9}, {
+  3.839700525978859*^9, 3.839700597465765*^9}, {3.8397011041509438`*^9, 
+  3.8397011053527727`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxx"}], "+", "aRxx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxy"}], "+", "aRxy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxz"}], "+", "aRxz"}]},
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyx"}], "+", "aRyx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyy"}], "+", "aRyy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyz"}], "+", "aRyz"}]},
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzx"}], "+", "aRzx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzy"}], "+", "aRzy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzz"}], "+", "aRzz"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.839700599592804*^9, 3.8397011778513317`*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxx"}], "+", "aRxx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyx"}], "+", "aRyx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzx"}], "+", "aRzx"}]},
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxy"}], "+", "aRxy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyy"}], "+", "aRyy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzy"}], "+", "aRzy"}]},
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxz"}], "+", "aRxz"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyz"}], "+", "aRyz"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzz"}], "+", "aRzz"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.839700599592804*^9, 3.839701177857873*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxx"}], "+", "aRxx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyx"}], "+", "aRyx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzx"}], "+", "aRzx"}]},
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxy"}], "+", "aRxy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyy"}], "+", "aRyy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzy"}], "+", "aRzy"}]},
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxz"}], "+", "aRxz"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyz"}], "+", "aRyz"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzz"}], "+", "aRzz"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.839700599592804*^9, 3.839701177862857*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxx"}], "+", "aRxx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxy"}], "+", "aRxy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxz"}], "+", "aRxz"}]},
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyx"}], "+", "aRyx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyy"}], "+", "aRyy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyz"}], "+", "aRyz"}]},
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzx"}], "+", "aRzx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzy"}], "+", "aRzy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzz"}], "+", "aRzz"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.839700599592804*^9, 3.839701177866378*^9}],
+
+Cell[BoxData[
+ StyleBox["\<\"Term \[Beta]3 \\!\\(\\*SuperscriptBox[\\(A\[Alpha]i\\), \
+\\(*\\)]\\) \\!\\(\\*SuperscriptBox[\\(A\[Alpha]i\\), \\(*\\)]\\) A\[Beta]j A\
+\[Beta]j is give\"\>",
+  StripOnInput->False,
+  LineColor->RGBColor[1, 0, 0],
+  FrontFaceColor->RGBColor[1, 0, 0],
+  BackFaceColor->RGBColor[1, 0, 0],
+  GraphicsColor->RGBColor[1, 0, 0],
+  FontSize->16,
+  FontColor->RGBColor[1, 0, 0]]], "Print",
+ CellChangeTimes->{3.8397005996136303`*^9, 3.8397011778695793`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxx"}], "+", "aRxx"}], 
+         ")"}], "2"], "+", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxy"}], "+", "aRxy"}], 
+         ")"}], "2"], "+", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxz"}], "+", "aRxz"}], 
+         ")"}], "2"]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIxx"}], "+", "aRxx"}], ")"}], "2"], 
+       "+", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIxy"}], "+", "aRxy"}], ")"}], "2"], 
+       "+", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIxz"}], "+", "aRxz"}], ")"}], 
+        "2"]}], ")"}]}], "+", 
+    RowBox[{"2", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{"(", 
+          RowBox[{"aIxx", "+", 
+           RowBox[{"\[ImaginaryI]", " ", "aRxx"}]}], ")"}]}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIyx", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyx"}]}], ")"}]}], "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxy", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxy"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIyy", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyy"}]}], ")"}]}], "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxz", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxz"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIyz", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyz"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIxx"}], "+", "aRxx"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIyx"}], "+", "aRyx"}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIxy"}], "+", "aRxy"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIyy"}], "+", "aRyy"}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIxz"}], "+", "aRxz"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIyz"}], "+", "aRyz"}], ")"}]}]}], 
+      ")"}]}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyx"}], "+", "aRyx"}], 
+         ")"}], "2"], "+", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyy"}], "+", "aRyy"}], 
+         ")"}], "2"], "+", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyz"}], "+", "aRyz"}], 
+         ")"}], "2"]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIyx"}], "+", "aRyx"}], ")"}], "2"], 
+       "+", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIyy"}], "+", "aRyy"}], ")"}], "2"], 
+       "+", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIyz"}], "+", "aRyz"}], ")"}], 
+        "2"]}], ")"}]}], "+", 
+    RowBox[{"2", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{"(", 
+          RowBox[{"aIxx", "+", 
+           RowBox[{"\[ImaginaryI]", " ", "aRxx"}]}], ")"}]}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzx", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzx"}]}], ")"}]}], "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxy", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxy"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzy", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzy"}]}], ")"}]}], "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxz", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxz"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzz", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzz"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIxx"}], "+", "aRxx"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIzx"}], "+", "aRzx"}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIxy"}], "+", "aRxy"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIzy"}], "+", "aRzy"}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIxz"}], "+", "aRxz"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIzz"}], "+", "aRzz"}], ")"}]}]}], 
+      ")"}]}], "+", 
+    RowBox[{"2", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{"(", 
+          RowBox[{"aIyx", "+", 
+           RowBox[{"\[ImaginaryI]", " ", "aRyx"}]}], ")"}]}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzx", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzx"}]}], ")"}]}], "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIyy", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyy"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzy", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzy"}]}], ")"}]}], "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIyz", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyz"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzz", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzz"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIyx"}], "+", "aRyx"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIzx"}], "+", "aRzx"}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIyy"}], "+", "aRyy"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIzy"}], "+", "aRzy"}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIyz"}], "+", "aRyz"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIzz"}], "+", "aRzz"}], ")"}]}]}], 
+      ")"}]}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzx"}], "+", "aRzx"}], 
+         ")"}], "2"], "+", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzy"}], "+", "aRzy"}], 
+         ")"}], "2"], "+", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzz"}], "+", "aRzz"}], 
+         ")"}], "2"]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIzx"}], "+", "aRzx"}], ")"}], "2"], 
+       "+", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIzy"}], "+", "aRzy"}], ")"}], "2"], 
+       "+", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[ImaginaryI]", " ", "aIzz"}], "+", "aRzz"}], ")"}], 
+        "2"]}], ")"}]}]}], ")"}], " ", "\[Beta]3"}]], "Output",
+ CellChangeTimes->{3.839700599592804*^9, 3.8397011778751*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", 
+  RowBox[{
+  "A\[Alpha]i", ",", "A\[Alpha]iHC", ",", "A\[Alpha]iT", ",", "A\[Alpha]iC", 
+   ",", "A\[Alpha]iCT", ",", "fGL", ",", "\[Alpha]", ",", "\[Beta]1", ",", 
+   "\[Beta]2", ",", "\[Beta]3", ",", "\[Beta]4", ",", "aRxx", ",", "aRxy", 
+   ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", "aRyz", ",", "aRzx", ",", 
+   "aRzy", ",", "aRzz", ",", "aIxx", ",", "aIxy", ",", "aIxz", ",", "aIyx", 
+   ",", "aIyy", ",", "aIyz", ",", "aIzx", ",", "aIzy", ",", "aIzz"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]i", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"aRxx", " ", "+", " ", 
+        RowBox[{"I", " ", "aIxx"}]}], ",", 
+       RowBox[{"aRxy", " ", "+", " ", 
+        RowBox[{"I", " ", "aIxy"}]}], ",", " ", 
+       RowBox[{"aRxz", " ", "+", 
+        RowBox[{"I", " ", "aIxz"}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"aRyx", " ", "+", " ", 
+        RowBox[{"I", " ", "aIyx"}]}], ",", 
+       RowBox[{"aRyy", " ", "+", " ", 
+        RowBox[{"I", " ", "aIyy"}]}], ",", " ", 
+       RowBox[{"aRyz", " ", "+", 
+        RowBox[{"I", " ", "aIyz"}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"aRzx", " ", "+", " ", 
+        RowBox[{"I", " ", "aIzx"}]}], ",", 
+       RowBox[{"aRzy", " ", "+", " ", 
+        RowBox[{"I", " ", "aIzy"}]}], ",", " ", 
+       RowBox[{"aRzz", " ", "+", 
+        RowBox[{"I", " ", "aIzz"}]}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]iT", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{
+     RowBox[{"Transpose", "[", "A\[Alpha]i", "]"}], ",", 
+     RowBox[{"Assumptions", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+         "aRxx", ",", "aRxy", ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", 
+          "aRyz", ",", "aRzx", ",", "aRzy", ",", "aRzz", ",", "aIxx", ",", 
+          "aIxy", ",", "aIxz", ",", "aIyx", ",", "aIyy", ",", "aIyz", ",", 
+          "aIzx", ",", "aIzy", ",", "aIzz"}], "}"}], "\[Element]", "Reals"}], 
+       "}"}]}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]iHC", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{
+     RowBox[{"ConjugateTranspose", "[", "A\[Alpha]i", "]"}], ",", 
+     RowBox[{"Assumptions", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+         "aRxx", ",", "aRxy", ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", 
+          "aRyz", ",", "aRzx", ",", "aRzy", ",", "aRzz", ",", "aIxx", ",", 
+          "aIxy", ",", "aIxz", ",", "aIyx", ",", "aIyy", ",", "aIyz", ",", 
+          "aIzx", ",", "aIzy", ",", "aIzz"}], "}"}], "\[Element]", "Reals"}], 
+       "}"}]}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]iC", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{
+     RowBox[{"Conjugate", "[", "A\[Alpha]i", "]"}], ",", 
+     RowBox[{"Assumptions", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+         "aRxx", ",", "aRxy", ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", 
+          "aRyz", ",", "aRzx", ",", "aRzy", ",", "aRzz", ",", "aIxx", ",", 
+          "aIxy", ",", "aIxz", ",", "aIyx", ",", "aIyy", ",", "aIyz", ",", 
+          "aIzx", ",", "aIzy", ",", "aIzz"}], "}"}], "\[Element]", "Reals"}], 
+       "}"}]}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"Style", "[", 
+   RowBox[{
+   "\"\<Term \[Beta]4 \!\(\*SuperscriptBox[\(A\[Alpha]i\), \(*\)]\) \
+\!\(\*SuperscriptBox[\(A\[Alpha]i\), \(*\)]\) A\[Beta]j A\[Beta]j is \
+give\>\"", ",", "16", ",", "Red"}], "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{
+   RowBox[{"\[Beta]4", " ", 
+    RowBox[{"Tr", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"A\[Alpha]i", ".", "A\[Alpha]iHC"}], ")"}], ".", 
+      RowBox[{"(", 
+       RowBox[{"A\[Alpha]i", ".", "A\[Alpha]iHC"}], ")"}]}], "]"}]}], ",", 
+   RowBox[{"Assumptions", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "aRxx", ",", "aRxy", ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", 
+        "aRyz", ",", "aRzx", ",", "aRzy", ",", "aRzz", ",", "aIxx", ",", 
+        "aIxy", ",", "aIxz", ",", "aIyx", ",", "aIyy", ",", "aIyz", ",", 
+        "aIzx", ",", "aIzy", ",", "aIzz"}], "}"}], "\[Element]", "Reals"}], 
+     "}"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.839701189609619*^9, 3.8397011931611137`*^9}, {
+   3.839701231087162*^9, 3.8397012340712*^9}, 3.839701500888014*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxx"}], "+", "aRxx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxy"}], "+", "aRxy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxz"}], "+", "aRxz"}]},
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyx"}], "+", "aRyx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyy"}], "+", "aRyy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyz"}], "+", "aRyz"}]},
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzx"}], "+", "aRzx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzy"}], "+", "aRzy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzz"}], "+", "aRzz"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.839701720579895*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxx"}], "+", "aRxx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyx"}], "+", "aRyx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzx"}], "+", "aRzx"}]},
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxy"}], "+", "aRxy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyy"}], "+", "aRyy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzy"}], "+", "aRzy"}]},
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxz"}], "+", "aRxz"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyz"}], "+", "aRyz"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzz"}], "+", "aRzz"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.839701720582662*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxx"}], "+", "aRxx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyx"}], "+", "aRyx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzx"}], "+", "aRzx"}]},
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxy"}], "+", "aRxy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyy"}], "+", "aRyy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzy"}], "+", "aRzy"}]},
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxz"}], "+", "aRxz"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyz"}], "+", "aRyz"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzz"}], "+", "aRzz"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.839701720585699*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxx"}], "+", "aRxx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxy"}], "+", "aRxy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxz"}], "+", "aRxz"}]},
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyx"}], "+", "aRyx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyy"}], "+", "aRyy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyz"}], "+", "aRyz"}]},
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzx"}], "+", "aRzx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzy"}], "+", "aRzy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzz"}], "+", "aRzz"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.839701720588894*^9}],
+
+Cell[BoxData[
+ StyleBox["\<\"Term \[Beta]4 \\!\\(\\*SuperscriptBox[\\(A\[Alpha]i\\), \
+\\(*\\)]\\) \\!\\(\\*SuperscriptBox[\\(A\[Alpha]i\\), \\(*\\)]\\) A\[Beta]j A\
+\[Beta]j is give\"\>",
+  StripOnInput->False,
+  LineColor->RGBColor[1, 0, 0],
+  FrontFaceColor->RGBColor[1, 0, 0],
+  BackFaceColor->RGBColor[1, 0, 0],
+  GraphicsColor->RGBColor[1, 0, 0],
+  FontSize->16,
+  FontColor->RGBColor[1, 0, 0]]], "Print",
+ CellChangeTimes->{3.839701720591463*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["aIxx", "2"], "+", 
+       SuperscriptBox["aIxy", "2"], "+", 
+       SuperscriptBox["aIxz", "2"], "+", 
+       SuperscriptBox["aRxx", "2"], "+", 
+       SuperscriptBox["aRxy", "2"], "+", 
+       SuperscriptBox["aRxz", "2"]}], ")"}], "2"], "+", 
+    RowBox[{"2", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxx", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxx"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIyx", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyx"}]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxy", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxy"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIyy", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyy"}]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxz", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxz"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIyz", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyz"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxx", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxx"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIyx", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyx"}]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxy", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxy"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIyy", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyy"}]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxz", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxz"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIyz", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyz"}]}], ")"}]}]}], ")"}]}], "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["aIyx", "2"], "+", 
+       SuperscriptBox["aIyy", "2"], "+", 
+       SuperscriptBox["aIyz", "2"], "+", 
+       SuperscriptBox["aRyx", "2"], "+", 
+       SuperscriptBox["aRyy", "2"], "+", 
+       SuperscriptBox["aRyz", "2"]}], ")"}], "2"], "+", 
+    RowBox[{"2", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxx", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxx"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzx", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzx"}]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxy", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxy"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzy", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzy"}]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxz", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxz"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzz", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzz"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxx", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxx"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzx", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzx"}]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxy", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxy"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzy", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzy"}]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxz", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxz"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzz", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzz"}]}], ")"}]}]}], ")"}]}], "+", 
+    RowBox[{"2", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIyx", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyx"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzx", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzx"}]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIyy", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyy"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzy", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzy"}]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIyz", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyz"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzz", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzz"}]}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIyx", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyx"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzx", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzx"}]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIyy", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyy"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzy", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzy"}]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIyz", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyz"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzz", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzz"}]}], ")"}]}]}], ")"}]}], "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["aIzx", "2"], "+", 
+       SuperscriptBox["aIzy", "2"], "+", 
+       SuperscriptBox["aIzz", "2"], "+", 
+       SuperscriptBox["aRzx", "2"], "+", 
+       SuperscriptBox["aRzy", "2"], "+", 
+       SuperscriptBox["aRzz", "2"]}], ")"}], "2"]}], ")"}], " ", 
+  "\[Beta]4"}]], "Output",
+ CellChangeTimes->{3.839701727933756*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", 
+  RowBox[{
+  "A\[Alpha]i", ",", "A\[Alpha]iHC", ",", "A\[Alpha]iT", ",", "A\[Alpha]iC", 
+   ",", "A\[Alpha]iCT", ",", "fGL", ",", "\[Alpha]", ",", "\[Beta]1", ",", 
+   "\[Beta]2", ",", "\[Beta]3", ",", "\[Beta]4", ",", "aRxx", ",", "aRxy", 
+   ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", "aRyz", ",", "aRzx", ",", 
+   "aRzy", ",", "aRzz", ",", "aIxx", ",", "aIxy", ",", "aIxz", ",", "aIyx", 
+   ",", "aIyy", ",", "aIyz", ",", "aIzx", ",", "aIzy", ",", "aIzz"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]i", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"aRxx", " ", "+", " ", 
+        RowBox[{"I", " ", "aIxx"}]}], ",", 
+       RowBox[{"aRxy", " ", "+", " ", 
+        RowBox[{"I", " ", "aIxy"}]}], ",", " ", 
+       RowBox[{"aRxz", " ", "+", 
+        RowBox[{"I", " ", "aIxz"}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"aRyx", " ", "+", " ", 
+        RowBox[{"I", " ", "aIyx"}]}], ",", 
+       RowBox[{"aRyy", " ", "+", " ", 
+        RowBox[{"I", " ", "aIyy"}]}], ",", " ", 
+       RowBox[{"aRyz", " ", "+", 
+        RowBox[{"I", " ", "aIyz"}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"aRzx", " ", "+", " ", 
+        RowBox[{"I", " ", "aIzx"}]}], ",", 
+       RowBox[{"aRzy", " ", "+", " ", 
+        RowBox[{"I", " ", "aIzy"}]}], ",", " ", 
+       RowBox[{"aRzz", " ", "+", 
+        RowBox[{"I", " ", "aIzz"}]}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]iT", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{
+     RowBox[{"Transpose", "[", "A\[Alpha]i", "]"}], ",", 
+     RowBox[{"Assumptions", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+         "aRxx", ",", "aRxy", ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", 
+          "aRyz", ",", "aRzx", ",", "aRzy", ",", "aRzz", ",", "aIxx", ",", 
+          "aIxy", ",", "aIxz", ",", "aIyx", ",", "aIyy", ",", "aIyz", ",", 
+          "aIzx", ",", "aIzy", ",", "aIzz"}], "}"}], "\[Element]", "Reals"}], 
+       "}"}]}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]iHC", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{
+     RowBox[{"ConjugateTranspose", "[", "A\[Alpha]i", "]"}], ",", 
+     RowBox[{"Assumptions", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+         "aRxx", ",", "aRxy", ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", 
+          "aRyz", ",", "aRzx", ",", "aRzy", ",", "aRzz", ",", "aIxx", ",", 
+          "aIxy", ",", "aIxz", ",", "aIyx", ",", "aIyy", ",", "aIyz", ",", 
+          "aIzx", ",", "aIzy", ",", "aIzz"}], "}"}], "\[Element]", "Reals"}], 
+       "}"}]}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]iC", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{
+     RowBox[{"Conjugate", "[", "A\[Alpha]i", "]"}], ",", 
+     RowBox[{"Assumptions", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+         "aRxx", ",", "aRxy", ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", 
+          "aRyz", ",", "aRzx", ",", "aRzy", ",", "aRzz", ",", "aIxx", ",", 
+          "aIxy", ",", "aIxz", ",", "aIyx", ",", "aIyy", ",", "aIyz", ",", 
+          "aIzx", ",", "aIzy", ",", "aIzz"}], "}"}], "\[Element]", "Reals"}], 
+       "}"}]}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"Style", "[", 
+   RowBox[{
+   "\"\<Term \[Beta]5 \!\(\*SuperscriptBox[\(A\[Alpha]i\), \(*\)]\) \
+\!\(\*SuperscriptBox[\(A\[Alpha]i\), \(*\)]\) A\[Beta]j A\[Beta]j is \
+give\>\"", ",", "16", ",", "Red"}], "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{
+   RowBox[{"\[Beta]5", " ", 
+    RowBox[{"Tr", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"A\[Alpha]i", ".", "A\[Alpha]iHC"}], ")"}], ".", 
+      RowBox[{"(", 
+       RowBox[{"Conjugate", "[", 
+        RowBox[{"(", 
+         RowBox[{"A\[Alpha]i", ".", "A\[Alpha]iHC"}], ")"}], "]"}], ")"}]}], 
+     "]"}]}], ",", 
+   RowBox[{"Assumptions", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "aRxx", ",", "aRxy", ",", "aRxz", ",", "aRyx", ",", "aRyy", ",", 
+        "aRyz", ",", "aRzx", ",", "aRzy", ",", "aRzz", ",", "aIxx", ",", 
+        "aIxy", ",", "aIxz", ",", "aIyx", ",", "aIyy", ",", "aIyz", ",", 
+        "aIzx", ",", "aIzy", ",", "aIzz"}], "}"}], "\[Element]", "Reals"}], 
+     "}"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.839702071792426*^9, 3.839702076735991*^9}, {
+  3.8397021468609533`*^9, 3.8397021843772087`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxx"}], "+", "aRxx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxy"}], "+", "aRxy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxz"}], "+", "aRxz"}]},
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyx"}], "+", "aRyx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyy"}], "+", "aRyy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyz"}], "+", "aRyz"}]},
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzx"}], "+", "aRzx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzy"}], "+", "aRzy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzz"}], "+", "aRzz"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.839702191296432*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxx"}], "+", "aRxx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyx"}], "+", "aRyx"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzx"}], "+", "aRzx"}]},
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxy"}], "+", "aRxy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyy"}], "+", "aRyy"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzy"}], "+", "aRzy"}]},
+     {
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIxz"}], "+", "aRxz"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIyz"}], "+", "aRyz"}], 
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", "aIzz"}], "+", "aRzz"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.839702191299899*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxx"}], "+", "aRxx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyx"}], "+", "aRyx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzx"}], "+", "aRzx"}]},
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxy"}], "+", "aRxy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyy"}], "+", "aRyy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzy"}], "+", "aRzy"}]},
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxz"}], "+", "aRxz"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyz"}], "+", "aRyz"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzz"}], "+", "aRzz"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.839702191303521*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxx"}], "+", "aRxx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxy"}], "+", "aRxy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIxz"}], "+", "aRxz"}]},
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyx"}], "+", "aRyx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyy"}], "+", "aRyy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIyz"}], "+", "aRyz"}]},
+     {
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzx"}], "+", "aRzx"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzy"}], "+", "aRzy"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "aIzz"}], "+", "aRzz"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.839702191307189*^9}],
+
+Cell[BoxData[
+ StyleBox["\<\"Term \[Beta]5 \\!\\(\\*SuperscriptBox[\\(A\[Alpha]i\\), \
+\\(*\\)]\\) \\!\\(\\*SuperscriptBox[\\(A\[Alpha]i\\), \\(*\\)]\\) A\[Beta]j A\
+\[Beta]j is give\"\>",
+  StripOnInput->False,
+  LineColor->RGBColor[1, 0, 0],
+  FrontFaceColor->RGBColor[1, 0, 0],
+  BackFaceColor->RGBColor[1, 0, 0],
+  GraphicsColor->RGBColor[1, 0, 0],
+  FontSize->16,
+  FontColor->RGBColor[1, 0, 0]]], "Print",
+ CellChangeTimes->{3.8397021913107367`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["aIxx", "2"], "+", 
+       SuperscriptBox["aIxy", "2"], "+", 
+       SuperscriptBox["aIxz", "2"], "+", 
+       SuperscriptBox["aRxx", "2"], "+", 
+       SuperscriptBox["aRxy", "2"], "+", 
+       SuperscriptBox["aRxz", "2"]}], ")"}], "2"], "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxx", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxx"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIyx", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyx"}]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxy", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxy"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIyy", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyy"}]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxz", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxz"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIyz", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyz"}]}], ")"}]}]}], ")"}], "2"], 
+    "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxx", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxx"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIyx", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyx"}]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxy", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxy"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIyy", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyy"}]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxz", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxz"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIyz", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyz"}]}], ")"}]}]}], ")"}], "2"], 
+    "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["aIyx", "2"], "+", 
+       SuperscriptBox["aIyy", "2"], "+", 
+       SuperscriptBox["aIyz", "2"], "+", 
+       SuperscriptBox["aRyx", "2"], "+", 
+       SuperscriptBox["aRyy", "2"], "+", 
+       SuperscriptBox["aRyz", "2"]}], ")"}], "2"], "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxx", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxx"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzx", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzx"}]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxy", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxy"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzy", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzy"}]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxz", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxz"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzz", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzz"}]}], ")"}]}]}], ")"}], "2"], 
+    "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIyx", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyx"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzx", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzx"}]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIyy", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyy"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzy", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzy"}]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIyz", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyz"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzz", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzz"}]}], ")"}]}]}], ")"}], "2"], 
+    "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxx", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxx"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzx", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzx"}]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxy", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxy"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzy", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzy"}]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIxz", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRxz"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzz", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzz"}]}], ")"}]}]}], ")"}], "2"], 
+    "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIyx", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyx"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzx", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzx"}]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIyy", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyy"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzy", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzy"}]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"aIyz", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "aRyz"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"aIzz", "+", 
+          RowBox[{"\[ImaginaryI]", " ", "aRzz"}]}], ")"}]}]}], ")"}], "2"], 
+    "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["aIzx", "2"], "+", 
+       SuperscriptBox["aIzy", "2"], "+", 
+       SuperscriptBox["aIzz", "2"], "+", 
+       SuperscriptBox["aRzx", "2"], "+", 
+       SuperscriptBox["aRzy", "2"], "+", 
+       SuperscriptBox["aRzz", "2"]}], ")"}], "2"]}], ")"}], " ", 
+  "\[Beta]5"}]], "Output",
+ CellChangeTimes->{3.8397022007585077`*^9}]
+}, Open  ]]
+},
+WindowSize->{1920, 1028},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>2. Inherited,
+FrontEndVersion->"10.1 for Linux x86 (64-bit) (March 23, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 4062, 92, 792, "Input"],
+Cell[4645, 116, 1185, 32, 127, "Output"],
+Cell[5833, 150, 1557, 41, 146, "Output"],
+Cell[7393, 193, 1404, 43, 127, "Output"],
+Cell[8800, 238, 1773, 50, 146, "Output"],
+Cell[10576, 290, 441, 11, 54, "Print"],
+Cell[11020, 303, 1069, 26, 141, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12126, 334, 5225, 119, 1026, "Input"],
+Cell[17354, 455, 1484, 39, 146, "Output"],
+Cell[18841, 496, 1484, 39, 146, "Output"],
+Cell[20328, 537, 1702, 48, 146, "Output"],
+Cell[22033, 587, 1702, 48, 146, "Output"],
+Cell[23738, 637, 623, 13, 54, "Print"],
+Cell[24364, 652, 3075, 107, 231, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27476, 764, 4802, 113, 1026, "Input"],
+Cell[32281, 879, 1342, 37, 146, "Output"],
+Cell[33626, 918, 1340, 37, 146, "Output"],
+Cell[34969, 957, 1556, 46, 146, "Output"],
+Cell[36528, 1005, 1556, 46, 146, "Output"],
+Cell[38087, 1053, 475, 11, 54, "Print"],
+Cell[38565, 1066, 898, 24, 144, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39500, 1095, 4803, 115, 1026, "Input"],
+Cell[44306, 1212, 1340, 37, 146, "Output"],
+Cell[45649, 1251, 1338, 37, 146, "Output"],
+Cell[46990, 1290, 1554, 46, 146, "Output"],
+Cell[48547, 1338, 1554, 46, 146, "Output"],
+Cell[50104, 1386, 479, 11, 54, "Print"],
+Cell[50586, 1399, 8510, 265, 416, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[59133, 1669, 4774, 114, 1026, "Input"],
+Cell[63910, 1785, 1316, 37, 146, "Output"],
+Cell[65229, 1824, 1316, 37, 146, "Output"],
+Cell[66548, 1863, 1532, 46, 146, "Output"],
+Cell[68083, 1911, 1532, 46, 146, "Output"],
+Cell[69618, 1959, 453, 11, 54, "Print"],
+Cell[70074, 1972, 5997, 173, 422, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[76108, 2150, 4833, 117, 1026, "Input"],
+Cell[80944, 2269, 1316, 37, 146, "Output"],
+Cell[82263, 2308, 1316, 37, 146, "Output"],
+Cell[83582, 2347, 1532, 46, 146, "Output"],
+Cell[85117, 2395, 1532, 46, 146, "Output"],
+Cell[86652, 2443, 455, 11, 54, "Print"],
+Cell[87110, 2456, 6110, 182, 461, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
