@@ -1,0 +1,309 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12175,        301]
+NotebookOptionsPosition[     11168,        276]
+NotebookOutlinePosition[     11587,        293]
+CellTagsIndexPosition[     11544,        290]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"Clear", "[", 
+  RowBox[{
+  "A\[Alpha]i", ",", "A\[Alpha]iC", ",", "\[Alpha]", ",", "A\[Alpha]iA", ",", 
+   "A\[Alpha]iAC", ",", "\[Phi]\[Lambda]", ",", "D\[Alpha]i\[Lambda]", ",", 
+   "\[Phi]\[Kappa]", ",", "D\[Alpha]i\[Kappa]C"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]i", "=", 
+   RowBox[{"A\[Alpha]iA", "+", 
+    RowBox[{"\[Phi]\[Lambda]", " ", "D\[Alpha]i\[Lambda]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]iC", "=", 
+   RowBox[{"A\[Alpha]iAC", "+", 
+    RowBox[{"\[Phi]\[Kappa]", " ", "D\[Alpha]i\[Kappa]C"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"Style", "[", 
+   RowBox[{
+   "\"\< \[Alpha] A\[Alpha]i \!\(\*SuperscriptBox[\(A\[Alpha]i\), \(*\)]\) \
+term:\>\"", ",", "Red", ",", "16"}], "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"f\[Alpha]", "=", 
+  RowBox[{"Expand", "[", 
+   RowBox[{"\[Alpha]", " ", "A\[Alpha]i", " ", "A\[Alpha]iC"}], 
+   "]"}]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.8484987076469393`*^9, 3.8484989074175386`*^9}, {
+  3.848498960413262*^9, 3.848498990254353*^9}, {3.848499031402471*^9, 
+  3.848499049709712*^9}, {3.8484990800849123`*^9, 3.848499109982033*^9}, {
+  3.848499279384581*^9, 3.84849941717243*^9}, {3.8484995430337257`*^9, 
+  3.848499545920892*^9}, {3.848499593469728*^9, 3.848499594164563*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"b7ab6602-43c2-4387-8b0b-ab381dcc2b06"],
+
+Cell[BoxData[
+ StyleBox["\<\" \[Alpha] A\[Alpha]i \\!\\(\\*SuperscriptBox[\\(A\[Alpha]i\\), \
+\\(*\\)]\\) term:\"\>",
+  StripOnInput->False,
+  LineColor->RGBColor[1, 0, 0],
+  FrontFaceColor->RGBColor[1, 0, 0],
+  BackFaceColor->RGBColor[1, 0, 0],
+  GraphicsColor->RGBColor[1, 0, 0],
+  FontSize->16,
+  FontColor->RGBColor[1, 0, 0]]], "Print",
+ CellChangeTimes->{
+  3.848499339452553*^9, {3.8484993862149878`*^9, 3.848499396045321*^9}, 
+   3.84849946132775*^9, 3.848499548416863*^9, 3.848499595016858*^9},
+ CellLabel->
+  "During evaluation of \
+In[25]:=",ExpressionUUID->"2636f046-1f35-4f80-949b-151d6e6b2aea"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"A\[Alpha]iA", " ", "A\[Alpha]iAC", " ", "\[Alpha]"}], "+", 
+  RowBox[{
+  "A\[Alpha]iA", " ", "D\[Alpha]i\[Kappa]C", " ", "\[Alpha]", " ", 
+   "\[Phi]\[Kappa]"}], "+", 
+  RowBox[{
+  "A\[Alpha]iAC", " ", "D\[Alpha]i\[Lambda]", " ", "\[Alpha]", " ", 
+   "\[Phi]\[Lambda]"}], "+", 
+  RowBox[{
+  "D\[Alpha]i\[Kappa]C", " ", "D\[Alpha]i\[Lambda]", " ", "\[Alpha]", " ", 
+   "\[Phi]\[Kappa]", " ", "\[Phi]\[Lambda]"}]}]], "Output",
+ CellChangeTimes->{{3.84849938622764*^9, 3.848499396049427*^9}, 
+   3.8484994613304033`*^9, 3.8484995484205914`*^9, 3.848499595021834*^9},
+ CellLabel->"Out[29]=",ExpressionUUID->"aa5e9139-8555-43ad-92d8-c354dff33969"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", 
+  RowBox[{
+  "A\[Alpha]i", ",", "A\[Beta]j", ",", "A\[Beta]j1", ",", "A\[Beta]j2", ",", 
+   "A\[Alpha]iC1", ",", "A\[Alpha]iC2", ",", "\[Alpha]", ",", "\[Beta]1", ",",
+    "A\[Alpha]iA", ",", "A\[Beta]jA", ",", "A\[Alpha]iAC", ",", 
+   "\[Phi]\[Lambda]", ",", "\[Phi]\[Xi]", ",", "\[Phi]\[Epsilon]", ",", 
+   "\[Phi]\[Gamma]", ",", "D\[Alpha]i\[Lambda]", ",", "\[Phi]\[Kappa]", ",", 
+   "D\[Alpha]i\[Kappa]C"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]i", "=", 
+   RowBox[{"A\[Alpha]iA", "+", 
+    RowBox[{"\[Phi]\[Lambda]", " ", "D\[Alpha]i\[Lambda]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Beta]j1", "=", 
+   RowBox[{"A\[Beta]jA", "+", 
+    RowBox[{"\[Phi]\[Kappa]", " ", "D\[Beta]j\[Kappa]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Beta]j2", "=", 
+   RowBox[{"A\[Beta]jA", "+", 
+    RowBox[{"\[Phi]\[Xi]", " ", "D\[Beta]j\[Xi]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]iC1", "=", 
+   RowBox[{"A\[Alpha]iAC", "+", 
+    RowBox[{"\[Phi]\[Epsilon]", " ", "D\[Alpha]i\[Epsilon]C"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]iC2", "=", 
+   RowBox[{"A\[Alpha]iAC", "+", 
+    RowBox[{"\[Phi]\[Gamma]", " ", "D\[Alpha]i\[Gamma]C"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"Style", "[", 
+   RowBox[{
+   "\"\< \[Beta]1 \!\(\*SuperscriptBox[\(A\[Alpha]i\), \(*\)]\) \
+\!\(\*SuperscriptBox[\(A\[Alpha]i\), \(*\)]\) A\[Beta]j A\[Beta]j term:\>\"", 
+    ",", "Red", ",", "16"}], "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"f\[Beta]1", "=", 
+  RowBox[{"Expand", "[", 
+   RowBox[{
+   "\[Beta]1", " ", "A\[Alpha]iC1", " ", "A\[Alpha]iC2", " ", "A\[Beta]j1", 
+    " ", "A\[Beta]j2"}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.848499612365871*^9, 3.8484997724749002`*^9}, {
+  3.848499828814089*^9, 3.848499895571721*^9}, {3.848499926261334*^9, 
+  3.848499987043235*^9}, {3.8485003747611628`*^9, 3.848500403127748*^9}, {
+  3.848500528079689*^9, 3.8485005663089867`*^9}, {3.8485011030112867`*^9, 
+  3.848501113283182*^9}},
+ CellLabel->"In[46]:=",ExpressionUUID->"c24342e3-bdbc-4bfc-80f6-3aa70ec9a0cc"],
+
+Cell[BoxData[
+ StyleBox["\<\" \[Beta]1 \\!\\(\\*SuperscriptBox[\\(A\[Alpha]i\\), \
+\\(*\\)]\\) \\!\\(\\*SuperscriptBox[\\(A\[Alpha]i\\), \\(*\\)]\\) A\[Beta]j A\
+\[Beta]j term:\"\>",
+  StripOnInput->False,
+  LineColor->RGBColor[1, 0, 0],
+  FrontFaceColor->RGBColor[1, 0, 0],
+  BackFaceColor->RGBColor[1, 0, 0],
+  GraphicsColor->RGBColor[1, 0, 0],
+  FontSize->16,
+  FontColor->RGBColor[1, 0, 0]]], "Print",
+ CellChangeTimes->{3.848499990630966*^9, 3.8485005743233147`*^9, 
+  3.848501119510026*^9},
+ CellLabel->
+  "During evaluation of \
+In[46]:=",ExpressionUUID->"f67438dc-95a2-4825-9ac2-328c098607e2"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SuperscriptBox["A\[Alpha]iAC", "2"], " ", 
+   SuperscriptBox["A\[Beta]jA", "2"], " ", "\[Beta]1"}], "+", 
+  RowBox[{"A\[Alpha]iAC", " ", 
+   SuperscriptBox["A\[Beta]jA", "2"], " ", "D\[Alpha]i\[Gamma]C", " ", 
+   "\[Beta]1", " ", "\[Phi]\[Gamma]"}], "+", 
+  RowBox[{"A\[Alpha]iAC", " ", 
+   SuperscriptBox["A\[Beta]jA", "2"], " ", "D\[Alpha]i\[Epsilon]C", " ", 
+   "\[Beta]1", " ", "\[Phi]\[Epsilon]"}], "+", 
+  RowBox[{
+   SuperscriptBox["A\[Beta]jA", "2"], " ", "D\[Alpha]i\[Gamma]C", " ", 
+   "D\[Alpha]i\[Epsilon]C", " ", "\[Beta]1", " ", "\[Phi]\[Gamma]", " ", 
+   "\[Phi]\[Epsilon]"}], "+", 
+  RowBox[{
+   SuperscriptBox["A\[Alpha]iAC", "2"], " ", "A\[Beta]jA", " ", 
+   "D\[Beta]j\[Kappa]", " ", "\[Beta]1", " ", "\[Phi]\[Kappa]"}], "+", 
+  RowBox[{
+  "A\[Alpha]iAC", " ", "A\[Beta]jA", " ", "D\[Alpha]i\[Gamma]C", " ", 
+   "D\[Beta]j\[Kappa]", " ", "\[Beta]1", " ", "\[Phi]\[Gamma]", " ", 
+   "\[Phi]\[Kappa]"}], "+", 
+  RowBox[{
+  "A\[Alpha]iAC", " ", "A\[Beta]jA", " ", "D\[Alpha]i\[Epsilon]C", " ", 
+   "D\[Beta]j\[Kappa]", " ", "\[Beta]1", " ", "\[Phi]\[Epsilon]", " ", 
+   "\[Phi]\[Kappa]"}], "+", 
+  RowBox[{
+  "A\[Beta]jA", " ", "D\[Alpha]i\[Gamma]C", " ", "D\[Alpha]i\[Epsilon]C", " ",
+    "D\[Beta]j\[Kappa]", " ", "\[Beta]1", " ", "\[Phi]\[Gamma]", " ", 
+   "\[Phi]\[Epsilon]", " ", "\[Phi]\[Kappa]"}], "+", 
+  RowBox[{
+   SuperscriptBox["A\[Alpha]iAC", "2"], " ", "A\[Beta]jA", " ", 
+   "D\[Beta]j\[Xi]", " ", "\[Beta]1", " ", "\[Phi]\[Xi]"}], "+", 
+  RowBox[{
+  "A\[Alpha]iAC", " ", "A\[Beta]jA", " ", "D\[Alpha]i\[Gamma]C", " ", 
+   "D\[Beta]j\[Xi]", " ", "\[Beta]1", " ", "\[Phi]\[Gamma]", " ", 
+   "\[Phi]\[Xi]"}], "+", 
+  RowBox[{
+  "A\[Alpha]iAC", " ", "A\[Beta]jA", " ", "D\[Alpha]i\[Epsilon]C", " ", 
+   "D\[Beta]j\[Xi]", " ", "\[Beta]1", " ", "\[Phi]\[Epsilon]", " ", 
+   "\[Phi]\[Xi]"}], "+", 
+  RowBox[{
+  "A\[Beta]jA", " ", "D\[Alpha]i\[Gamma]C", " ", "D\[Alpha]i\[Epsilon]C", " ",
+    "D\[Beta]j\[Xi]", " ", "\[Beta]1", " ", "\[Phi]\[Gamma]", " ", 
+   "\[Phi]\[Epsilon]", " ", "\[Phi]\[Xi]"}], "+", 
+  RowBox[{
+   SuperscriptBox["A\[Alpha]iAC", "2"], " ", "D\[Beta]j\[Kappa]", " ", 
+   "D\[Beta]j\[Xi]", " ", "\[Beta]1", " ", "\[Phi]\[Kappa]", " ", 
+   "\[Phi]\[Xi]"}], "+", 
+  RowBox[{
+  "A\[Alpha]iAC", " ", "D\[Alpha]i\[Gamma]C", " ", "D\[Beta]j\[Kappa]", " ", 
+   "D\[Beta]j\[Xi]", " ", "\[Beta]1", " ", "\[Phi]\[Gamma]", " ", 
+   "\[Phi]\[Kappa]", " ", "\[Phi]\[Xi]"}], "+", 
+  RowBox[{
+  "A\[Alpha]iAC", " ", "D\[Alpha]i\[Epsilon]C", " ", "D\[Beta]j\[Kappa]", " ",
+    "D\[Beta]j\[Xi]", " ", "\[Beta]1", " ", "\[Phi]\[Epsilon]", " ", 
+   "\[Phi]\[Kappa]", " ", "\[Phi]\[Xi]"}], "+", 
+  RowBox[{
+  "D\[Alpha]i\[Gamma]C", " ", "D\[Alpha]i\[Epsilon]C", " ", 
+   "D\[Beta]j\[Kappa]", " ", "D\[Beta]j\[Xi]", " ", "\[Beta]1", " ", 
+   "\[Phi]\[Gamma]", " ", "\[Phi]\[Epsilon]", " ", "\[Phi]\[Kappa]", " ", 
+   "\[Phi]\[Xi]"}]}]], "Output",
+ CellChangeTimes->{3.848499990633522*^9, 3.848500574326146*^9, 
+  3.848501119512082*^9},
+ CellLabel->"Out[53]=",ExpressionUUID->"7d389e08-e0f6-4c29-99e2-879620d8f76a"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", 
+  RowBox[{
+  "A\[Alpha]i", ",", "A\[Beta]j", ",", "A\[Beta]j1", ",", "A\[Beta]j2", ",", 
+   "A\[Alpha]iC1", ",", "A\[Alpha]iC2", ",", "\[Alpha]", ",", "\[Beta]1", ",",
+    "A\[Alpha]iA", ",", "A\[Beta]jA", ",", "A\[Alpha]iAC", ",", 
+   "\[Phi]\[Lambda]", ",", "\[Phi]\[Xi]", ",", "\[Phi]\[Epsilon]", ",", 
+   "\[Phi]\[Gamma]", ",", "D\[Alpha]i\[Lambda]", ",", "\[Phi]\[Kappa]", ",", 
+   "D\[Alpha]i\[Kappa]C"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]i", "=", 
+   RowBox[{"A\[Alpha]iA", "+", 
+    RowBox[{"\[Phi]\[Lambda]", " ", "D\[Alpha]i\[Lambda]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Beta]j1", "=", 
+   RowBox[{"A\[Beta]jA", "+", 
+    RowBox[{"\[Phi]\[Kappa]", " ", "D\[Alpha]i\[Kappa]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Beta]j2", "=", 
+   RowBox[{"A\[Beta]jA", "+", 
+    RowBox[{"\[Phi]\[Xi]", " ", "D\[Alpha]i\[Xi]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]iC1", "=", 
+   RowBox[{"A\[Alpha]iAC", "+", 
+    RowBox[{"\[Phi]\[Epsilon]", " ", "D\[Alpha]i\[Epsilon]C"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[Alpha]iC2", "=", 
+   RowBox[{"A\[Alpha]iAC", "+", 
+    RowBox[{"\[Phi]\[Gamma]", " ", "D\[Alpha]i\[Gamma]C"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"Style", "[", 
+   RowBox[{
+   "\"\< \[Beta]2 \!\(\*SuperscriptBox[\(A\[Alpha]i\), \(*\)]\) \
+\!\(\*SuperscriptBox[\(A\[Alpha]i\), \(*\)]\) A\[Beta]j A\[Beta]j term:\>\"", 
+    ",", "Red", ",", "16"}], "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"f\[Beta]1", "=", 
+  RowBox[{"Expand", "[", 
+   RowBox[{
+   "\[Beta]1", " ", "A\[Alpha]iC1", " ", "A\[Alpha]iC2", " ", "A\[Beta]j1", 
+    " ", "A\[Beta]j2"}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.848500587653365*^9, 
+  3.8485005878815527`*^9}},ExpressionUUID->"4a20db02-1f10-4c0f-9ccc-\
+e4678a802b98"]
+},
+WindowSize->{1386, 762},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"12.3 for Linux x86 (64-bit) (May 11, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"19f5c997-27c5-402f-8092-cefd2915718c"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1451, 31, 164, "Input",ExpressionUUID->"b7ab6602-43c2-4387-8b0b-ab381dcc2b06"],
+Cell[2034, 55, 607, 15, 35, "Print",ExpressionUUID->"2636f046-1f35-4f80-949b-151d6e6b2aea"],
+Cell[2644, 72, 677, 14, 41, "Output",ExpressionUUID->"aa5e9139-8555-43ad-92d8-c354dff33969"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3358, 91, 2186, 50, 214, "Input",ExpressionUUID->"c24342e3-bdbc-4bfc-80f6-3aa70ec9a0cc"],
+Cell[5547, 143, 601, 15, 35, "Print",ExpressionUUID->"f67438dc-95a2-4825-9ac2-328c098607e2"],
+Cell[6151, 160, 3077, 64, 138, "Output",ExpressionUUID->"7d389e08-e0f6-4c29-99e2-879620d8f76a"]
+}, Open  ]],
+Cell[9243, 227, 1921, 47, 214, "Input",ExpressionUUID->"4a20db02-1f10-4c0f-9ccc-e4678a802b98"]
+}
+]
+*)
+

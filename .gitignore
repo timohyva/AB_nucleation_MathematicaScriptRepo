@@ -1,3 +1,6 @@
-# ignore type and folder
+# ignore list
+*.pdf
 *.zip
-Untitled_Message/
+
+# ignore folder
+*/
