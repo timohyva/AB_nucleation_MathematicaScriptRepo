@@ -1,0 +1,634 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     19707,        625]
+NotebookOptionsPosition[     18858,        593]
+NotebookOutlinePosition[     19224,        609]
+CellTagsIndexPosition[     19181,        606]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{
+   "\[Beta]1wc", ",", "\[Beta]2wc", ",", "\[Beta]3wc", ",", "\[Beta]4wc", ",",
+     "\[Beta]5wc", ",", "\[Beta]1sc", ",", "\[Beta]2sc", ",", "\[Beta]3sc", 
+    ",", "\[Beta]4sc", ",", "\[Beta]5sc", ",", "t", ",", "\[Beta]A", ",", 
+    "\[Beta]B", ",", "\[Beta]1", ",", "\[Beta]2", ",", "\[Beta]3", ",", 
+    "\[Beta]4", ",", "\[Beta]5", ",", "\[Lambda]"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Beta]1", "=", 
+   RowBox[{"\[Beta]1wc", "+", 
+    RowBox[{
+     SuperscriptBox["t", "\[Lambda]"], " ", "\[Beta]1sc"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Beta]2", "=", 
+   RowBox[{"\[Beta]2wc", "+", 
+    RowBox[{
+     SuperscriptBox["t", "\[Lambda]"], " ", "\[Beta]2sc"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Beta]3", "=", 
+   RowBox[{"\[Beta]3wc", "+", 
+    RowBox[{
+     SuperscriptBox["t", "\[Lambda]"], " ", "\[Beta]3sc"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Beta]4", "=", 
+   RowBox[{"\[Beta]4wc", "+", 
+    RowBox[{
+     SuperscriptBox["t", "\[Lambda]"], " ", "\[Beta]4sc"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Beta]5", "=", 
+    RowBox[{"\[Beta]5wc", "+", 
+     RowBox[{
+      SuperscriptBox["t", "\[Lambda]"], " ", "\[Beta]5sc"}]}]}], ";"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"**", "**"}], "**"}], "**"}], "**"}], "**"}], "**"}], 
+   "******)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Beta]A", "=", 
+   RowBox[{"\[Beta]2", "+", "\[Beta]4", "+", "\[Beta]5"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Beta]B", "=", 
+    RowBox[{"\[Beta]1", "+", "\[Beta]2", "+", 
+     RowBox[{
+      FractionBox["1", "3"], " ", 
+      RowBox[{"(", 
+       RowBox[{"\[Beta]3", "+", "\[Beta]4", "+", "\[Beta]5"}], ")"}]}]}]}], 
+   ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"**", "**"}], "**"}], "**"}], "**"}], "**"}], "**"}], 
+   "******)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{
+   RowBox[{"\[Beta]A", "-", "\[Beta]B"}], ",", 
+   RowBox[{"Assumptions", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "\[Beta]1wc", ",", "\[Beta]2wc", ",", "\[Beta]3wc", ",", "\[Beta]4wc",
+          ",", "\[Beta]5wc", ",", "\[Beta]1sc", ",", "\[Beta]2sc", ",", 
+         "\[Beta]3sc", ",", "\[Beta]4sc", ",", "\[Beta]5sc", ",", "t", ",", 
+         "\[Lambda]"}], "}"}], "\[Element]", "Reals"}], ",", 
+      RowBox[{"t", ">", "0"}], ",", 
+      RowBox[{"\[Lambda]", ">", "0"}]}], "}"}]}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "/.", 
+  RowBox[{
+   SuperscriptBox["t", "\[Lambda]"], "\[Rule]", 
+   "x"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"%", "\[Equal]", "0"}], ",", "x"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Log", "[", 
+  RowBox[{"t", ",", 
+   FractionBox[
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "3"}], " ", "\[Beta]1wc"}], "-", "\[Beta]3wc", "+", 
+     RowBox[{"2", " ", "\[Beta]4wc"}], "+", 
+     RowBox[{"2", " ", "\[Beta]5wc"}]}], 
+    RowBox[{
+     RowBox[{"3", " ", "\[Beta]1sc"}], "+", "\[Beta]3sc", "-", 
+     RowBox[{"2", " ", "\[Beta]4sc"}], "-", 
+     RowBox[{"2", " ", "\[Beta]5sc"}]}]]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8582949600360737`*^9, 3.8582955881823473`*^9}, {
+  3.8582957613581467`*^9, 3.858295803462028*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", "3"], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "3"}], " ", "\[Beta]1wc"}], "-", "\[Beta]3wc", "-", 
+    RowBox[{
+     SuperscriptBox["t", "\[Lambda]"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"3", " ", "\[Beta]1sc"}], "+", "\[Beta]3sc", "-", 
+       RowBox[{"2", " ", 
+        RowBox[{"(", 
+         RowBox[{"\[Beta]4sc", "+", "\[Beta]5sc"}], ")"}]}]}], ")"}]}], "+", 
+    RowBox[{"2", " ", 
+     RowBox[{"(", 
+      RowBox[{"\[Beta]4wc", "+", "\[Beta]5wc"}], ")"}]}]}], ")"}]}]], "Output",\
+
+ CellChangeTimes->{
+  3.8582953659520483`*^9, 3.858295489358506*^9, {3.858295568364251*^9, 
+   3.85829559084682*^9}, 3.858295805170298*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", "3"], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "3"}], " ", "\[Beta]1wc"}], "-", "\[Beta]3wc", "-", 
+    RowBox[{"x", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"3", " ", "\[Beta]1sc"}], "+", "\[Beta]3sc", "-", 
+       RowBox[{"2", " ", 
+        RowBox[{"(", 
+         RowBox[{"\[Beta]4sc", "+", "\[Beta]5sc"}], ")"}]}]}], ")"}]}], "+", 
+    RowBox[{"2", " ", 
+     RowBox[{"(", 
+      RowBox[{"\[Beta]4wc", "+", "\[Beta]5wc"}], ")"}]}]}], ")"}]}]], "Output",\
+
+ CellChangeTimes->{
+  3.8582953659520483`*^9, 3.858295489358506*^9, {3.858295568364251*^9, 
+   3.85829559084682*^9}, 3.858295805170959*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"x", "\[Rule]", 
+    FractionBox[
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "3"}], " ", "\[Beta]1wc"}], "-", "\[Beta]3wc", "+", 
+      RowBox[{"2", " ", "\[Beta]4wc"}], "+", 
+      RowBox[{"2", " ", "\[Beta]5wc"}]}], 
+     RowBox[{
+      RowBox[{"3", " ", "\[Beta]1sc"}], "+", "\[Beta]3sc", "-", 
+      RowBox[{"2", " ", "\[Beta]4sc"}], "-", 
+      RowBox[{"2", " ", "\[Beta]5sc"}]}]]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.8582953659520483`*^9, 3.858295489358506*^9, {3.858295568364251*^9, 
+   3.85829559084682*^9}, 3.858295805171359*^9}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"Log", "[", 
+   FractionBox[
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "3"}], " ", "\[Beta]1wc"}], "-", "\[Beta]3wc", "+", 
+     RowBox[{"2", " ", "\[Beta]4wc"}], "+", 
+     RowBox[{"2", " ", "\[Beta]5wc"}]}], 
+    RowBox[{
+     RowBox[{"3", " ", "\[Beta]1sc"}], "+", "\[Beta]3sc", "-", 
+     RowBox[{"2", " ", "\[Beta]4sc"}], "-", 
+     RowBox[{"2", " ", "\[Beta]5sc"}]}]], "]"}], 
+  RowBox[{"Log", "[", "t", "]"}]]], "Output",
+ CellChangeTimes->{
+  3.8582953659520483`*^9, 3.858295489358506*^9, {3.858295568364251*^9, 
+   3.85829559084682*^9}, 3.858295805171751*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{
+   "\[Beta]1wc", ",", "\[Beta]2wc", ",", "\[Beta]3wc", ",", "\[Beta]4wc", ",",
+     "\[Beta]5wc", ",", "\[Beta]1sc", ",", "\[Beta]2sc", ",", "\[Beta]3sc", 
+    ",", "\[Beta]4sc", ",", "\[Beta]5sc", ",", "t", ",", "\[Beta]A", ",", 
+    "\[Beta]B", ",", "\[Beta]1", ",", "\[Beta]2", ",", "\[Beta]3", ",", 
+    "\[Beta]4", ",", "\[Beta]5", ",", "\[Lambda]", ",", "N0", ",", "kb", ",", 
+    "Tc", ",", "zeta3", ",", "c1wc", ",", "c2wc", ",", "c3wc", ",", "c4wc", 
+    ",", "c5wc", ",", "c1sc", ",", "c2sc", ",", "c3sc", ",", "c4sc", ",", 
+    "c5sc"}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Beta]1wc", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     FractionBox["N0", 
+      RowBox[{
+       SuperscriptBox["kb", "2"], " ", 
+       SuperscriptBox["Tc", "2"]}]], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"7", " ", "zeta3"}], 
+       RowBox[{"240", " ", 
+        SuperscriptBox["\[Pi]", "2"]}]], " ", "c1wc"}], ")"}]}]}], " ", ";", 
+  RowBox[{"\[Beta]1sc", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     FractionBox["N0", 
+      RowBox[{
+       SuperscriptBox["kb", "2"], " ", 
+       SuperscriptBox["Tc", "2"]}]], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"7", " ", "zeta3"}], 
+       RowBox[{"240", " ", 
+        SuperscriptBox["\[Pi]", "2"]}]], " ", "c1sc"}], ")"}]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Beta]2wc", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     FractionBox["N0", 
+      RowBox[{
+       SuperscriptBox["kb", "2"], " ", 
+       SuperscriptBox["Tc", "2"]}]], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"7", " ", "zeta3"}], 
+       RowBox[{"240", " ", 
+        SuperscriptBox["\[Pi]", "2"]}]], " ", "c2wc"}], ")"}]}]}], " ", ";", 
+  RowBox[{"\[Beta]2sc", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     FractionBox["N0", 
+      RowBox[{
+       SuperscriptBox["kb", "2"], " ", 
+       SuperscriptBox["Tc", "2"]}]], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"7", " ", "zeta3"}], 
+       RowBox[{"240", " ", 
+        SuperscriptBox["\[Pi]", "2"]}]], " ", "c2sc"}], ")"}]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Beta]3wc", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     FractionBox["N0", 
+      RowBox[{
+       SuperscriptBox["kb", "2"], " ", 
+       SuperscriptBox["Tc", "2"]}]], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"7", " ", "zeta3"}], 
+       RowBox[{"240", " ", 
+        SuperscriptBox["\[Pi]", "2"]}]], " ", "c3wc"}], ")"}]}]}], " ", ";", 
+  RowBox[{"\[Beta]3sc", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     FractionBox["N0", 
+      RowBox[{
+       SuperscriptBox["kb", "2"], " ", 
+       SuperscriptBox["Tc", "2"]}]], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"7", " ", "zeta3"}], 
+       RowBox[{"240", " ", 
+        SuperscriptBox["\[Pi]", "2"]}]], " ", "c3sc"}], ")"}]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Beta]4wc", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     FractionBox["N0", 
+      RowBox[{
+       SuperscriptBox["kb", "2"], " ", 
+       SuperscriptBox["Tc", "2"]}]], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"7", " ", "zeta3"}], 
+       RowBox[{"240", " ", 
+        SuperscriptBox["\[Pi]", "2"]}]], " ", "c4wc"}], ")"}]}]}], " ", ";", 
+  RowBox[{"\[Beta]4sc", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     FractionBox["N0", 
+      RowBox[{
+       SuperscriptBox["kb", "2"], " ", 
+       SuperscriptBox["Tc", "2"]}]], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"7", " ", "zeta3"}], 
+       RowBox[{"240", " ", 
+        SuperscriptBox["\[Pi]", "2"]}]], " ", "c4sc"}], ")"}]}]}], " ", ";"}],
+ "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Beta]5wc", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     FractionBox["N0", 
+      RowBox[{
+       SuperscriptBox["kb", "2"], " ", 
+       SuperscriptBox["Tc", "2"]}]], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"7", " ", "zeta3"}], 
+       RowBox[{"240", " ", 
+        SuperscriptBox["\[Pi]", "2"]}]], " ", "c5wc"}], ")"}]}]}], " ", ";", 
+  RowBox[{"\[Beta]5sc", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     FractionBox["N0", 
+      RowBox[{
+       SuperscriptBox["kb", "2"], " ", 
+       SuperscriptBox["Tc", "2"]}]], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"7", " ", "zeta3"}], 
+       RowBox[{"240", " ", 
+        SuperscriptBox["\[Pi]", "2"]}]], " ", "c5sc"}], ")"}]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Beta]1", "=", 
+   RowBox[{"\[Beta]1wc", "+", 
+    RowBox[{
+     SuperscriptBox["t", "\[Lambda]"], " ", "\[Beta]1sc"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Beta]2", "=", 
+   RowBox[{"\[Beta]2wc", "+", 
+    RowBox[{
+     SuperscriptBox["t", "\[Lambda]"], " ", "\[Beta]2sc"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Beta]3", "=", 
+   RowBox[{"\[Beta]3wc", "+", 
+    RowBox[{
+     SuperscriptBox["t", "\[Lambda]"], " ", "\[Beta]3sc"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Beta]4", "=", 
+   RowBox[{"\[Beta]4wc", "+", 
+    RowBox[{
+     SuperscriptBox["t", "\[Lambda]"], " ", "\[Beta]4sc"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Beta]5", "=", 
+    RowBox[{"\[Beta]5wc", "+", 
+     RowBox[{
+      SuperscriptBox["t", "\[Lambda]"], " ", "\[Beta]5sc"}]}]}], ";"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"**", "**"}], "**"}], "**"}], "**"}], "**"}], "**"}], 
+   "******)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Beta]A", "=", 
+   RowBox[{"\[Beta]2", "+", "\[Beta]4", "+", "\[Beta]5"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Beta]B", "=", 
+    RowBox[{"\[Beta]1", "+", "\[Beta]2", "+", 
+     RowBox[{
+      FractionBox["1", "3"], " ", 
+      RowBox[{"(", 
+       RowBox[{"\[Beta]3", "+", "\[Beta]4", "+", "\[Beta]5"}], ")"}]}]}]}], 
+   ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"**", "**"}], "**"}], "**"}], "**"}], "**"}], "**"}], 
+   "******)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{
+   RowBox[{"\[Beta]A", "-", "\[Beta]B"}], ",", 
+   RowBox[{"Assumptions", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "\[Beta]1wc", ",", "\[Beta]2wc", ",", "\[Beta]3wc", ",", "\[Beta]4wc",
+          ",", "\[Beta]5wc", ",", "\[Beta]1sc", ",", "\[Beta]2sc", ",", 
+         "\[Beta]3sc", ",", "\[Beta]4sc", ",", "\[Beta]5sc", ",", "t", ",", 
+         "\[Lambda]"}], "}"}], "\[Element]", "Reals"}], ",", 
+      RowBox[{"t", ">", "0"}], ",", 
+      RowBox[{"\[Lambda]", ">", "0"}]}], "}"}]}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "/.", 
+  RowBox[{
+   SuperscriptBox["t", "\[Lambda]"], "\[Rule]", 
+   "x"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"%", "\[Equal]", "0"}], ",", "x"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"Style", "[", 
+   RowBox[{
+   "\"\<Then the correct exponet \[Lambda] is given as \
+\!\(\*SubscriptBox[\(log\), \(tAB\)]\)x:\>\"", ",", " ", "Red", ",", "18"}], 
+   "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Log", "[", 
+  RowBox[{"t", ",", "%%"}], "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.8582973991220303`*^9, 3.858297440047985*^9}, {
+  3.858297499492181*^9, 3.858297534768816*^9}, {3.8582976001841927`*^9, 
+  3.8582976997512283`*^9}, {3.858297741179515*^9, 3.858297888097413*^9}, {
+  3.858297958480497*^9, 3.858297959364337*^9}, {3.858298045467654*^9, 
+  3.858298055661422*^9}, {3.858298255723769*^9, 3.858298261373951*^9}, {
+  3.8582983919701777`*^9, 3.858298479793661*^9}, {3.858298637364168*^9, 
+  3.858298640597514*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", 
+   RowBox[{"720", " ", 
+    SuperscriptBox["kb", "2"], " ", 
+    SuperscriptBox["\[Pi]", "2"], " ", 
+    SuperscriptBox["Tc", "2"]}]], 
+  RowBox[{"7", " ", "N0", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "3"}], " ", "c1wc"}], "-", "c3wc", "+", 
+     RowBox[{"2", " ", 
+      RowBox[{"(", 
+       RowBox[{"c4wc", "+", "c5wc"}], ")"}]}], "-", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"3", " ", "c1sc"}], "+", "c3sc", "-", 
+        RowBox[{"2", " ", 
+         RowBox[{"(", 
+          RowBox[{"c4sc", "+", "c5sc"}], ")"}]}]}], ")"}], " ", 
+      SuperscriptBox["t", "\[Lambda]"]}]}], ")"}], " ", "zeta3"}]}]], "Output",\
+
+ CellChangeTimes->{
+  3.858297891454397*^9, 3.858297961218781*^9, 3.858298056634837*^9, {
+   3.8582984379145412`*^9, 3.858298480789192*^9}, 3.858298641906333*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", 
+   RowBox[{"720", " ", 
+    SuperscriptBox["kb", "2"], " ", 
+    SuperscriptBox["\[Pi]", "2"], " ", 
+    SuperscriptBox["Tc", "2"]}]], 
+  RowBox[{"7", " ", "N0", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "3"}], " ", "c1wc"}], "-", "c3wc", "+", 
+     RowBox[{"2", " ", 
+      RowBox[{"(", 
+       RowBox[{"c4wc", "+", "c5wc"}], ")"}]}], "-", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"3", " ", "c1sc"}], "+", "c3sc", "-", 
+        RowBox[{"2", " ", 
+         RowBox[{"(", 
+          RowBox[{"c4sc", "+", "c5sc"}], ")"}]}]}], ")"}], " ", "x"}]}], 
+    ")"}], " ", "zeta3"}]}]], "Output",
+ CellChangeTimes->{
+  3.858297891454397*^9, 3.858297961218781*^9, 3.858298056634837*^9, {
+   3.8582984379145412`*^9, 3.858298480789192*^9}, 3.858298641907135*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"x", "\[Rule]", 
+    FractionBox[
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "3"}], " ", "c1wc"}], "-", "c3wc", "+", 
+      RowBox[{"2", " ", "c4wc"}], "+", 
+      RowBox[{"2", " ", "c5wc"}]}], 
+     RowBox[{
+      RowBox[{"3", " ", "c1sc"}], "+", "c3sc", "-", 
+      RowBox[{"2", " ", "c4sc"}], "-", 
+      RowBox[{"2", " ", "c5sc"}]}]]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.858297891454397*^9, 3.858297961218781*^9, 3.858298056634837*^9, {
+   3.8582984379145412`*^9, 3.858298480789192*^9}, 3.858298641907638*^9}],
+
+Cell[BoxData[
+ StyleBox["\<\"Then the correct exponet \[Lambda] is given as \
+\\!\\(\\*SubscriptBox[\\(log\\), \\(tAB\\)]\\)x:\"\>",
+  StripOnInput->False,
+  LineColor->RGBColor[1, 0, 0],
+  FrontFaceColor->RGBColor[1, 0, 0],
+  BackFaceColor->RGBColor[1, 0, 0],
+  GraphicsColor->RGBColor[1, 0, 0],
+  FontSize->18,
+  FontColor->RGBColor[1, 0, 0]]], "Print",
+ CellChangeTimes->{{3.8582984379322433`*^9, 3.8582984807910223`*^9}, 
+   3.8582986419080763`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   FractionBox[
+    RowBox[{"Log", "[", 
+     RowBox[{"x", "\[Rule]", 
+      FractionBox[
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "3"}], " ", "c1wc"}], "-", "c3wc", "+", 
+        RowBox[{"2", " ", "c4wc"}], "+", 
+        RowBox[{"2", " ", "c5wc"}]}], 
+       RowBox[{
+        RowBox[{"3", " ", "c1sc"}], "+", "c3sc", "-", 
+        RowBox[{"2", " ", "c4sc"}], "-", 
+        RowBox[{"2", " ", "c5sc"}]}]]}], "]"}], 
+    RowBox[{"Log", "[", "t", "]"}]], "}"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.858297891454397*^9, 3.858297961218781*^9, 3.858298056634837*^9, {
+   3.8582984379145412`*^9, 3.858298480789192*^9}, 3.858298641908656*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"-", "0.0391"}], "*", "3"}], "+", 
+  RowBox[{"(", 
+   RowBox[{"-", "0.0265"}], ")"}], "-", 
+  RowBox[{"2", "*", 
+   RowBox[{"(", 
+    RowBox[{"-", "0.3255"}], ")"}]}], "-", 
+  RowBox[{"2", "*", 
+   RowBox[{"(", 
+    RowBox[{"-", "0.3611"}], ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.8583033432303762`*^9, 3.858303463017549*^9}}],
+
+Cell[BoxData["1.2294`"], "Output",
+ CellChangeTimes->{3.858303464302554*^9}]
+}, Open  ]]
+},
+WindowSize->{1920, 1031},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"10.1 for Linux x86 (64-bit) (March 23, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 3591, 106, 444, "Input"],
+Cell[4174, 130, 714, 21, 63, "Output"],
+Cell[4891, 153, 679, 20, 63, "Output"],
+Cell[5573, 175, 615, 16, 67, "Output"],
+Cell[6191, 193, 610, 16, 86, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6838, 214, 8036, 249, 773, "Input"],
+Cell[14877, 465, 877, 26, 66, "Output"],
+Cell[15757, 493, 844, 25, 66, "Output"],
+Cell[16604, 520, 590, 16, 63, "Output"],
+Cell[17197, 538, 453, 11, 37, "Print"],
+Cell[17653, 551, 698, 19, 84, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18388, 575, 375, 12, 38, "Input"],
+Cell[18766, 589, 76, 1, 71, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
